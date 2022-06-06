@@ -1,0 +1,16 @@
+\documentclass{standalone}
+\usepackage{circuitikz}
+\usepackage{schemabloc}
+
+\begin{document}
+\begin{tikzpicture}
+\sbEntree{E}
+\sbComp{comp}{E}
+\sbRelier[$E(p)$]{E}{comp}
+\sbBloc[3]{B1}{$F(p)$}{comp}
+\sbRelier{comp}{B1}
+\sbSortie[6]{S}{B1}
+\sbRelier[$S(p)$]{B1}{S}
+\sbRenvoi{B1-S}{comp}{}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,13 @@
+\documentclass{standalone}
+\usepackage{circuitikz}
+\usepackage{schemabloc}
+
+\begin{document}
+\begin{tikzpicture}
+\sbEntree{E}
+\sbBloc[5]{B1}{Système}{E}
+\sbRelier[entrée]{E}{B1}
+\sbSortie[5]{S}{B1}
+\sbRelier[sortie]{B1}{S}
+\end{tikzpicture}
+\end{document}

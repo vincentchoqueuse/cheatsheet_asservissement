@@ -1,0 +1,6 @@
+Jinja2 < 3.1
+pydata-sphinx-theme
+numpy
+scipy
+control
+matplotlib
