@@ -1,0 +1,625 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Systèmes de 2nd ordre &#8212; pydata_theme  documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Liste des correcteurs" href="correction.html" />
+    <link rel="prev" title="Systèmes de 1er ordre" href="first_order.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../index.html">
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../index.html">
+  Cours
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../tutorials/index.html">
+  Tutorials
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../cheatsheet.html">
+  Cheatsheet
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../links.html">
+  Links
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../about.html">
+  About
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/vincentchoqueuse/cheatsheet_asservissement" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contents:
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Systèmes Continus
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="laplace.html">
+     Transformée de Laplace
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="analyse.html">
+     Systèmes SLIT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="first_order.html">
+     Systèmes de 1er ordre
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Systèmes de 2nd ordre
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="correction.html">
+     Liste des correcteurs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nichols.html">
+     Diagrammes de Black Nichols
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nichols2.html">
+     Correction P
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nichols3.html">
+     Correction PI
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../discrets/index.html">
+   Systèmes à temps discret
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../discrets/z.html">
+     Transformée en Z
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../discrets/analyse.html">
+     Systèmes SLIT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../discrets/systeme_echantillonne.html">
+     Systèmes Echantillonnés
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../discrets/correction.html">
+     Liste des correcteurs
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modelisation">
+   Modélisation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#equation-differentielle">
+     Equation Différentielle
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fonction-de-transfert">
+     Fonction de Transfert
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#poles">
+   Pôles
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#expression">
+     Expression
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple">
+     Exemple
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#identification">
+     Identification
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reponse-indicielle">
+   Réponse Indicielle
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cas-ou-m-1">
+     Cas où
+     <span class="math notranslate nohighlight">
+      \(m&gt;1\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Cas où
+     <span class="math notranslate nohighlight">
+      \(m&lt;1\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Identification
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reponse-frequentielle">
+   Réponse Fréquentielle
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#module">
+     Module
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#argument">
+     Argument
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Identification
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="systemes-de-2nd-ordre">
+<h1>Systèmes de 2nd ordre<a class="headerlink" href="#systemes-de-2nd-ordre" title="Permalink to this headline">#</a></h1>
+<section id="modelisation">
+<h2>Modélisation<a class="headerlink" href="#modelisation" title="Permalink to this headline">#</a></h2>
+<section id="equation-differentielle">
+<h3>Equation Différentielle<a class="headerlink" href="#equation-differentielle" title="Permalink to this headline">#</a></h3>
+<p>Pour un système passe-bas linéaire d’ordre 2, le lien entre l’entrée et la sortie peut être décrit par une équation différentielle de second ordre à coefficients constants.</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{\omega_n^2}\frac{d^2 s(t)}{dt^2}+\frac{2m}{\omega_n}\frac{d s(t)}{dt}+s(t)=Ke(t)\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(K\)</span> : gain statique,</p></li>
+<li><p><span class="math notranslate nohighlight">\(m \ge 0\)</span> : coefficient d’amortissement,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega_n\)</span> : pulsation propre (en rad/s).</p></li>
+</ul>
+<p>Notons que certains ouvrages préfèrent utiliser, au lieu du paramètre <span class="math notranslate nohighlight">\(m\)</span>, le facteur de qualité</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Q=\frac{1}{2m}\)</span> : facteur de qualité.</p></li>
+</ul>
+</section>
+<section id="fonction-de-transfert">
+<h3>Fonction de Transfert<a class="headerlink" href="#fonction-de-transfert" title="Permalink to this headline">#</a></h3>
+<p>La fonction de transfert d’un système passe-bas de second ordre est donnée par :</p>
+<div class="math notranslate nohighlight">
+\[H(p)=\frac{K}{\frac{1}{\omega_n^2}p^2+\frac{2m}{\omega_n}p+1}\]</div>
+</section>
+</section>
+<section id="poles">
+<h2>Pôles<a class="headerlink" href="#poles" title="Permalink to this headline">#</a></h2>
+<section id="expression">
+<h3>Expression<a class="headerlink" href="#expression" title="Permalink to this headline">#</a></h3>
+<p>Les pôles correspondent aux valeurs de <span class="math notranslate nohighlight">\(p\)</span> pour lesquelles</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{\omega_n^2}p^2+\frac{2m}{\omega_n}p+1 = 0\]</div>
+<p>Le calcul des pôles s’obtient en recherchant les racines d’une équation du second degré. Le discriminant s’exprime sous la forme :</p>
+<div class="math notranslate nohighlight">
+\[\Delta =\frac{4}{\omega_n^2}(m^2-1)\]</div>
+<p>Nous pouvons alors distinguer trois cas de figure :</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(m&gt;1\)</span>: deux pôles réels</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(p_{1}=-\omega_n(m-\sqrt{m^2-1})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p_{2}=-\omega_n(m+\sqrt{m^2-1})\)</span></p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(m=1\)</span>: un pôle double</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(p_1 = p_2 = -m\omega_n\)</span></p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(m&lt;1\)</span>: deux pôles complexe-conjugués</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(p_{1}=-\omega_n(m-j\sqrt{1-m^2})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p_{2}=-\omega_n(m+j\sqrt{1-m^2})\)</span></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="exemple">
+<h3>Exemple<a class="headerlink" href="#exemple" title="Permalink to this headline">#</a></h3>
+<figure class="align-default">
+<img alt="../../_images/second_order-1.png" class="plot-directive" src="../../_images/second_order-1.png" />
+</figure>
+</section>
+<section id="identification">
+<h3>Identification<a class="headerlink" href="#identification" title="Permalink to this headline">#</a></h3>
+<p>Lorsque <span class="math notranslate nohighlight">\(0\le m&lt;1\)</span>, l’identification de la pulsation propre et coefficient d’amortissement peut s’obtenir de la manière suivante:</p>
+<ul class="simple">
+<li><p>Pulsation propre: la pulsation propre correspond au module des pôles c-à-d <span class="math notranslate nohighlight">\(\omega_n=|p_{k}|\)</span>,</p></li>
+<li><p>Coefficient d’amortissement: le coefficient d’amortissement s’obtient à partir de la partie réel des pôles via la relation <span class="math notranslate nohighlight">\(m=-\Re e(p_{k})/|p_{k}|\)</span>.</p></li>
+</ul>
+<p>Notons qu’il n’est pas possible d’identifier le gain statique en utilisant la position des pôles.</p>
+</section>
+</section>
+<section id="reponse-indicielle">
+<h2>Réponse Indicielle<a class="headerlink" href="#reponse-indicielle" title="Permalink to this headline">#</a></h2>
+<section id="cas-ou-m-1">
+<h3>Cas où <span class="math notranslate nohighlight">\(m&gt;1\)</span><a class="headerlink" href="#cas-ou-m-1" title="Permalink to this headline">#</a></h3>
+<p>La figure suivante présente l’allure de la réponse indicielle lorsque <span class="math notranslate nohighlight">\(m&gt;1\)</span>. Dans ce contexte, la réponse est monotone et ne présente pas de
+dépassement.</p>
+<figure class="align-default">
+<img alt="../../_images/second_order-2.png" class="plot-directive" src="../../_images/second_order-2.png" />
+</figure>
+<p>La réponse indicielle s’exprime sous la forme :</p>
+<div class="math notranslate nohighlight">
+\[s(t)=KE\left(1-\frac{1}{2\omega_n\sqrt{m^2-1}}\left(p_1 e^{p_2 t}-p_2 e^{p_1 t} \right)\right)u(t)\]</div>
+<p><strong>Propriétés</strong></p>
+<ul class="simple">
+<li><p>Valeur initiale : <span class="math notranslate nohighlight">\(s(0)=0\)</span>,</p></li>
+<li><p>Valeur finale : <span class="math notranslate nohighlight">\(s(\infty)=KE\)</span>,</p></li>
+<li><p>Temps de réponse à <span class="math notranslate nohighlight">\(\pm 5\%\)</span> : Pas de formule simple. Lorsque <span class="math notranslate nohighlight">\(m\gg 1\)</span>, le temps de réponse est dicté par le pôle le plus lent c-a-d <span class="math notranslate nohighlight">\(t_r\approx -\frac{3}{p_1}\)</span>,</p></li>
+<li><p>Pas de dépassement : <span class="math notranslate nohighlight">\(s(\infty)=\max(s(t))=KE\)</span>.</p></li>
+</ul>
+</section>
+<section id="id1">
+<h3>Cas où <span class="math notranslate nohighlight">\(m&lt;1\)</span><a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<p>La figure suivante présente l’allure de la réponse indicielle lorsque <span class="math notranslate nohighlight">\(m&lt;1\)</span>. Dans ce contexte, la réponse présente un dépassement plus ou moins important
+et des oscillations de pseudo-pulsation <span class="math notranslate nohighlight">\(\omega_p\)</span>. Pour analyser les performances d’un système de second ordre lorsque <span class="math notranslate nohighlight">\(m&lt;1\)</span>, nous utilisons principalement des abaques.</p>
+<figure class="align-default">
+<img alt="../../_images/second_order-3.png" class="plot-directive" src="../../_images/second_order-3.png" />
+</figure>
+<p>La réponse indicielle s’exprime sous la forme :</p>
+<div class="math notranslate nohighlight">
+\[s(t)=KE\left(1-\frac{1}{\sqrt{1-m^2}}e^{-m\omega_nt}\cos\left(\omega_n\sqrt{1-m^2}t-\arcsin(m)\right)\right)u(t)\]</div>
+<p><strong>Propriétés</strong></p>
+<ul class="simple">
+<li><p>Valeur initiale : <span class="math notranslate nohighlight">\(s(0)=0\)</span>,</p></li>
+<li><p>Valeur finale : <span class="math notranslate nohighlight">\(s(\infty)=KE\)</span>,</p></li>
+<li><p>Temps de réponse à <span class="math notranslate nohighlight">\(\pm 5\%\)</span> : Pas de formule simple, nous utiliserons des abaques. Lorsque <span class="math notranslate nohighlight">\(m\to 0\)</span>, le temps de réponse est approximativement imposé par l’enveloppe c-a-d <span class="math notranslate nohighlight">\(t_r\approx \frac{3}{\omega_n m}\)</span>,</p></li>
+<li><p>Présence d’oscillations à la pseudo-pulsation (rad/s):</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\omega_p = \omega_n\sqrt{1-m^2}\]</div>
+<ul class="simple">
+<li><p>Premier Dépassement relatif :</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[D_r(\%)=\frac{\max[s(t)]-s(\infty)}{s(\infty)} =e^{\frac{-\pi m}{\sqrt{1-m^2}}}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>En pratique, nous utiliserons des abaques pour déterminer le temps de réponse et le premier dépassement relatif : <a class="reference external" href="https://vincentchoqueuse.github.io/ENIB_tools/control_settling_time.html">https://vincentchoqueuse.github.io/ENIB_tools/control_settling_time.html</a></p>
+</div>
+</section>
+<section id="id2">
+<h3>Identification<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<p>Lorsque <span class="math notranslate nohighlight">\(m&lt;1\)</span>, l’identification graphique des paramètres peut s’obtenir de la manière suivante:</p>
+<ul class="simple">
+<li><p>Gain statique: le gain statique s’obtient à partir de la valeur finale via la relation <span class="math notranslate nohighlight">\(K = s(\infty)/E\)</span>.</p></li>
+<li><p>Coefficient d’amortissement: le coefficient d’amortissement s’obtient en mesurant la valeur du premier dépassement relatif et en utilisant l’abaques donnant <span class="math notranslate nohighlight">\(D_r(\%)\)</span> en fonction de <span class="math notranslate nohighlight">\(m\)</span>.</p></li>
+<li><p>Pulsation propre: la pulsation propre s’obtient en mesurant la valeur du temps de réponse à <span class="math notranslate nohighlight">\(\pm 5\%\)</span> et en utilisant la valeur de <span class="math notranslate nohighlight">\(m\)</span> ainsi que l’abaque donnant <span class="math notranslate nohighlight">\(\omega_n t_r = f(m)\)</span>.</p></li>
+</ul>
+</section>
+</section>
+<section id="reponse-frequentielle">
+<h2>Réponse Fréquentielle<a class="headerlink" href="#reponse-frequentielle" title="Permalink to this headline">#</a></h2>
+<p>La réponse fréquentielle s’obtient en posant <span class="math notranslate nohighlight">\(p=j\omega\)</span> où <span class="math notranslate nohighlight">\(\omega\)</span> désigne la pulsation (en rad/s). La réponse fréquentielle d’un système passe-bas de premier ordre est donnée par :</p>
+<div class="math notranslate nohighlight">
+\[H(j\omega)=\frac{K}{1-\frac{\omega^2}{\omega_n^2}+j\frac{2m\omega }{\omega_n}}\]</div>
+<section id="module">
+<h3>Module<a class="headerlink" href="#module" title="Permalink to this headline">#</a></h3>
+<p>La figure suivante présente l’allure le module de la réponse fréquentielle. Lorsque <span class="math notranslate nohighlight">\(m&lt;0.7\)</span>, le module présente un maximum à la pulsation de
+résonance <span class="math notranslate nohighlight">\(\omega_r\)</span>.</p>
+<figure class="align-default">
+<img alt="../../_images/second_order-4.png" class="plot-directive" src="../../_images/second_order-4.png" />
+</figure>
+<p>Le module s’exprime sous la forme</p>
+<div class="math notranslate nohighlight">
+\[|H(j\omega)|=\frac{|K|}{\sqrt{\left(1-\frac{\omega^2}{\omega_n^2}\right)^2+\frac{4m^2\omega^2}{\omega_n^2}}}\]</div>
+<p><strong>Propriétés</strong></p>
+<ul class="simple">
+<li><p>Amplification basse-fréquence : <span class="math notranslate nohighlight">\(\lim_{\omega\to 0}|H(j\omega)|=|K|\)</span>,</p></li>
+<li><p>Amplification haute-fréquence : <span class="math notranslate nohighlight">\(\lim_{\omega\to \infty}|H(j\omega)|=0\)</span>,</p></li>
+<li><p>Comportement asymptotique : Pour <span class="math notranslate nohighlight">\(\omega \gg \omega_n\)</span>, <span class="math notranslate nohighlight">\(|H(j\omega)|\approx |K| \left(\frac{\omega}{\omega_n}\right)^{-2}\)</span> (pente de -2),</p></li>
+</ul>
+<p>Si <span class="math notranslate nohighlight">\(m&lt;\frac{1}{\sqrt{2}}\approx 0.7\)</span>, il est possible de montrer que la dérivée du module présente un zéro. Dans ce contexte, le module présente un extremum nommé résonance.</p>
+<ul class="simple">
+<li><p>Pulsation de résonance :</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\omega_r = \omega_n \sqrt{1-2m^2}\]</div>
+<ul class="simple">
+<li><p>Maximum du module : le maximum est égal à <span class="math notranslate nohighlight">\(|H(j\omega_r)|=|K|/(2m\sqrt{1-m^2})\)</span>. En pratique, nous utiliserons essentiellement le facteur de resonance <span class="math notranslate nohighlight">\(M\)</span> qui s’obtient en divisant le module à la pulsation de résonance par le module du gain statique c-à-d</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[M=\frac{|H(j\omega_r)|}{|K|}=\frac{1}{2m\sqrt{1-m^2}}\]</div>
+<p>En dB, le facteur de résonance s’exprime sous la forme</p>
+<div class="math notranslate nohighlight">
+\[M_{dB} = G_{m} - G_{0}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(G_{m} = 20 \log_{10}(|H(j\omega_r)|)\)</span> correspond au module à la pulsation de résonance en dB,</p></li>
+<li><p><span class="math notranslate nohighlight">\(G_{0} = 20 \log_{10}(|K|)\)</span> correspond au module du gain statique en dB.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>En pratique, nous utiliserons des abaques pour déterminer le facteur de résonance en dB : <a class="reference external" href="https://vincentchoqueuse.github.io/ENIB_tools/control_resonance.html">https://vincentchoqueuse.github.io/ENIB_tools/control_resonance.html</a></p>
+</div>
+</section>
+<section id="argument">
+<h3>Argument<a class="headerlink" href="#argument" title="Permalink to this headline">#</a></h3>
+<figure class="align-default">
+<img alt="../../_images/second_order-5.png" class="plot-directive" src="../../_images/second_order-5.png" />
+</figure>
+<p>Lorsque <span class="math notranslate nohighlight">\(K&gt;0\)</span>, l’argument s’exprime sous la forme</p>
+<div class="math notranslate nohighlight">
+\[\arg[H(j\omega)]=-\textrm{arctan}\left(\frac{1}{2m} \left( \frac{\omega}{\omega_n} - \frac{\omega_n}{\omega}\right)  \right) - \frac{\pi}{2}\]</div>
+<p><strong>Propriétés</strong></p>
+<p>Si <span class="math notranslate nohighlight">\(K&gt;0\)</span>, nous obtenons les propriétés suivantes.</p>
+<ul class="simple">
+<li><p>Déphasage basse-fréquence : <span class="math notranslate nohighlight">\(\lim_{\omega\to 0}\arg[H(j\omega)]=0\)</span>,</p></li>
+<li><p>Déphasage haute-fréquence : <span class="math notranslate nohighlight">\(\lim_{\omega\to \infty}\arg[H(j\omega)]=-180^o\)</span>.</p></li>
+<li><p>Déphasage à la pulsation propre : <span class="math notranslate nohighlight">\(\arg[H(j\omega_n)]=-90^o\)</span>.</p></li>
+</ul>
+</section>
+<section id="id3">
+<h3>Identification<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<p>L’identification graphique des paramètres peut s’obtenir de la manière suivante:</p>
+<ul class="simple">
+<li><p>Gain statique: le gain statique correspond à la valeur du module en basse-fréquence. Si le module est affiché en dB, la valeur du module s’obtient via l’expression <span class="math notranslate nohighlight">\(K = 10^{G_0/20}\)</span>. Attention à bien vérifier que la phase évolue de <span class="math notranslate nohighlight">\(0\)</span> à <span class="math notranslate nohighlight">\(-180^o\)</span>. Si ca n’est pas le cas, le gain est négatif.</p></li>
+<li><p>Coefficient d’amortissement: le coefficient d’amortissement s’obtient en mesurant le facteur de résonance <span class="math notranslate nohighlight">\(M_{dB}\)</span> et en utilisant l’abaque donnant le facteur de résonance en dB en fonction de <span class="math notranslate nohighlight">\(m\)</span>.</p></li>
+<li><p>Pulsation propre: la pulsation propre peut s’obtenir de deux façons.</p>
+<ul>
+<li><p>Si la phase est disponible, la pulsation propre s’obtient en déterminant la pulsation telle que <span class="math notranslate nohighlight">\(\arg[H(j\omega)] = -90^o\)</span> (lorsque <span class="math notranslate nohighlight">\(K\)</span> est positif).</p></li>
+<li><p>Si la phase n’est pas disponible, la pulsation propre s’obtient à partir de la valeur de <span class="math notranslate nohighlight">\(m\)</span> et de la mesure de la pulsation résonance <span class="math notranslate nohighlight">\(\omega_r\)</span>, puis en utilisant la relation <span class="math notranslate nohighlight">\(\omega_r = \omega_n \sqrt{1-2m^2}\)</span>.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="first_order.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Systèmes de 1er ordre</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="correction.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Liste des correcteurs</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2022, V. Choqueuse.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

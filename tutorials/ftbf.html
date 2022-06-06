@@ -1,0 +1,366 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Fonction de Transfert en BF &#8212; pydata_theme  documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Equation de récurrence" href="eq_recu.html" />
+    <link rel="prev" title="Tutorials" href="index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../index.html">
+  <img src="../_static/logo.png" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../courses/index.html">
+  Cours
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="index.html">
+  Tutorials
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../cheatsheet.html">
+  Cheatsheet
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../links.html">
+  Links
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../about.html">
+  About
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/vincentchoqueuse/cheatsheet_asservissement" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contents:
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Fonction de Transfert en BF
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="eq_recu.html">
+   Equation de récurrence
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objectif">
+   Objectif
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methodologie">
+   Méthodologie
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ftbf">
+     FTBF
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gain-statique">
+     Gain statique
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calibration">
+     Calibration
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#verification">
+   Vérification
+  </a>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="fonction-de-transfert-en-bf">
+<h1>Fonction de Transfert en BF<a class="headerlink" href="#fonction-de-transfert-en-bf" title="Permalink to this headline">#</a></h1>
+<section id="objectif">
+<h2>Objectif<a class="headerlink" href="#objectif" title="Permalink to this headline">#</a></h2>
+<p>Dans ce tutorial, nous montrons comment utiliser l’expression de la FTBF pour régler un correcteur proportionnel.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/closed_loop_2d1.svg"><img alt="Boucle Fermée" src="../_images/closed_loop_2d1.svg" width="300" /></a>
+<figcaption>
+<p><span class="caption-text">Boucle Fermée</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>La fonction de transfert est égale à :</p>
+<div class="math notranslate nohighlight">
+\[F(z) = \frac{0.022}{z-0.666}\]</div>
+<p>La période d’échantillonnage est fixée à <span class="math notranslate nohighlight">\(T_e=0.1\)</span> s.
+L’objectif est de calibrer un correcteur proportionnel (c-a-d <span class="math notranslate nohighlight">\(C(z)=K\)</span>) de sorte à obtenir un gain statique en boucle fermée de 0.8</p>
+</section>
+<section id="methodologie">
+<h2>Méthodologie<a class="headerlink" href="#methodologie" title="Permalink to this headline">#</a></h2>
+<p>Pour calibrer la valeur de <span class="math notranslate nohighlight">\(K\)</span>, nous allons procéder en trois temps:</p>
+<ol class="arabic simple">
+<li><p>Calcul de la fonction de transfert en boucle fermée (FTBF),</p></li>
+<li><p>Calcul du gain statique de la boucle fermée,</p></li>
+<li><p>Calibration de K.</p></li>
+</ol>
+<section id="ftbf">
+<h3>FTBF<a class="headerlink" href="#ftbf" title="Permalink to this headline">#</a></h3>
+<p>Pour calculer la FTBF, nous allons utiliser la formule (à connaître):</p>
+<div class="math notranslate nohighlight">
+\[FTBF(z) = \frac{A(z)}{1+A(z)B(z)}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A(z)\)</span>: Fonction de transfert de la chaîne directe,</p></li>
+<li><p><span class="math notranslate nohighlight">\(B(z)\)</span>: Fonction de transfert de la chaîne de retour.</p></li>
+</ul>
+<p>Dans notre problème, nous avons <span class="math notranslate nohighlight">\(A(z)=K \times F(z)\)</span> et <span class="math notranslate nohighlight">\(B(z)=1\)</span>. La FTBF s’exprime alors sous la forme :</p>
+<div class="math notranslate nohighlight">
+\[FTBF(z) = \frac{\frac{0.022K}{z-0.666}}{1+\frac{0.022K}{z-0.666}}\]</div>
+<p>Après simplification, nous obtenons :</p>
+<div class="math notranslate nohighlight">
+\[FTBF(z) = \frac{0.022K}{z-0.666+0.022K}\]</div>
+</section>
+<section id="gain-statique">
+<h3>Gain statique<a class="headerlink" href="#gain-statique" title="Permalink to this headline">#</a></h3>
+<p>Comme le système est un système à temps discret, le gain statique <span class="math notranslate nohighlight">\(G\)</span> est donné par <span class="math notranslate nohighlight">\(FTBF(1)\)</span>. Il en vient que</p>
+<div class="math notranslate nohighlight">
+\[G = FTBF(1) = \frac{0.022K}{1-0.666+0.022K}= \frac{0.022K}{0.333+0.022K}\]</div>
+</section>
+<section id="calibration">
+<h3>Calibration<a class="headerlink" href="#calibration" title="Permalink to this headline">#</a></h3>
+<p>Pour obtenir un gain statique de 0.8, il faut poser l’égalité:</p>
+<div class="math notranslate nohighlight">
+\[\frac{0.022K}{0.333+0.022K} = 0.8\]</div>
+<p>Nous obtenons :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}0.022K &amp;= 0.8 (0.333+0.022K)\\
+0.0044K &amp;= 0.266\\
+K &amp; \approx 60\end{split}\]</div>
+</section>
+</section>
+<section id="verification">
+<h2>Vérification<a class="headerlink" href="#verification" title="Permalink to this headline">#</a></h2>
+<p>En asservissement, il est toujours utilise de vérifier le résultat avec une simulation. En utilisant Python, nous obtenons
+la réponse indicielle suivante.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">control</span> <span class="kn">import</span> <span class="n">tf</span><span class="p">,</span> <span class="n">feedback</span><span class="p">,</span> <span class="n">step_response</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">Te</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">K</span> <span class="o">=</span> <span class="mi">60</span>
+<span class="n">Fz</span> <span class="o">=</span> <span class="n">tf</span><span class="p">([</span><span class="mf">0.022</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.666</span><span class="p">],</span> <span class="n">Te</span><span class="p">)</span>
+<span class="n">Az</span> <span class="o">=</span> <span class="n">K</span><span class="o">*</span><span class="n">Fz</span>
+<span class="n">FTBFz</span> <span class="o">=</span> <span class="n">feedback</span><span class="p">(</span><span class="n">Az</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">T</span><span class="p">,</span> <span class="n">yout</span> <span class="o">=</span> <span class="n">step_response</span><span class="p">(</span><span class="n">FTBFz</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">yout</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="s2">&quot;post&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Temps [s]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Reponse Indicielle&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+<figure class="align-default">
+<img alt="../_images/ftbf-1.png" class="plot-directive" src="../_images/ftbf-1.png" />
+</figure>
+</section>
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Tutorials</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="eq_recu.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Equation de récurrence</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2022, V. Choqueuse.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,496 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Correction PI &#8212; pydata_theme  documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Systèmes à temps discret" href="../discrets/index.html" />
+    <link rel="prev" title="Correction P" href="nichols2.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../index.html">
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../index.html">
+  Cours
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../tutorials/index.html">
+  Tutorials
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../cheatsheet.html">
+  Cheatsheet
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../links.html">
+  Links
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../about.html">
+  About
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/vincentchoqueuse/cheatsheet_asservissement" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contents:
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Systèmes Continus
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="laplace.html">
+     Transformée de Laplace
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="analyse.html">
+     Systèmes SLIT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="first_order.html">
+     Systèmes de 1er ordre
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="second_order.html">
+     Systèmes de 2nd ordre
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="correction.html">
+     Liste des correcteurs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nichols.html">
+     Diagrammes de Black Nichols
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nichols2.html">
+     Correction P
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Correction PI
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../discrets/index.html">
+   Systèmes à temps discret
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../discrets/z.html">
+     Transformée en Z
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../discrets/analyse.html">
+     Systèmes SLIT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../discrets/systeme_echantillonne.html">
+     Systèmes Echantillonnés
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../discrets/correction.html">
+     Liste des correcteurs
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#contexte">
+   Contexte
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calibration">
+   Calibration
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#black-nichols">
+     Black-Nichols
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#choix-du-gain-partie-1">
+     Choix du gain (Partie 1)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#choix-du-parametre-ti">
+     Choix du paramètre Ti
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#choix-du-gain-partie-2">
+     Choix du gain (Partie 2)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#verification">
+   Vérification
+  </a>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="correction-pi">
+<h1>Correction PI<a class="headerlink" href="#correction-pi" title="Permalink to this headline">#</a></h1>
+<section id="contexte">
+<h2>Contexte<a class="headerlink" href="#contexte" title="Permalink to this headline">#</a></h2>
+<p>Dans ce tutorial, nous nous intéressons à la correction d’un système de 2ieme ordre avec un retour unitaire.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/closed_loop_2.svg"><img alt="Boucle Fermée avec Retour unitaire" src="../../_images/closed_loop_2.svg" width="350" /></a>
+</figure>
+<p>Dans ce tutorial, la fonction de transfert du système est égale à</p>
+<div class="math notranslate nohighlight">
+\[F(p)=\frac{1}{p^2+2p+1}\]</div>
+<p>Notre objectif est d’obtenir en boucle fermée :</p>
+<ul class="simple">
+<li><p>un coefficient d’amortissement de <span class="math notranslate nohighlight">\(m=0.52\)</span>,</p></li>
+<li><p>un gain statique unitaire.</p></li>
+</ul>
+</section>
+<section id="calibration">
+<h2>Calibration<a class="headerlink" href="#calibration" title="Permalink to this headline">#</a></h2>
+<p>Pour respecter ce cahier des charges, nous allons utiliser un correcteur proportionnel intégrale (PI) :</p>
+<div class="math notranslate nohighlight">
+\[C(p) = K_i \left(1+ \frac{1}{T_ip}\right) = K_i \frac{T_i p+1}{T_ip}\]</div>
+<p>Dans ce tutorial, nous allons calibrer les paramètres du correcteur, c-à-d <span class="math notranslate nohighlight">\(K_i\)</span> et <span class="math notranslate nohighlight">\(T_i\)</span>, directement dans le plan
+de Black Nichols.</p>
+<section id="black-nichols">
+<h3>Black-Nichols<a class="headerlink" href="#black-nichols" title="Permalink to this headline">#</a></h3>
+<p>Dans un premier temps, nous allons représenter le comportement fréquentiel du système <span class="math notranslate nohighlight">\(F(p)\)</span> en boucle ouverte.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">control</span> <span class="kn">import</span> <span class="n">tf</span><span class="p">,</span> <span class="n">feedback</span>
+<span class="kn">from</span> <span class="nn">control_plotly</span> <span class="kn">import</span> <span class="n">bode</span><span class="p">,</span><span class="n">nichols</span><span class="p">,</span> <span class="n">step</span>
+
+<span class="n">F</span> <span class="o">=</span> <span class="n">tf</span><span class="p">([</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">nichols</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">cm</span><span class="o">=</span><span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">],</span> <span class="n">show_phase</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">y_lim</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">25</span><span class="p">,</span><span class="mi">30</span><span class="p">],</span> <span class="n">x_lim</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">300</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../../_images/PI_1.png"><img alt="../../_images/PI_1.png" src="../../_images/PI_1.png" style="width: 700px;" /></a>
+<figcaption>
+<p><span class="caption-text">Diagramme de Black Nichols du système en boucle ouverte</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="choix-du-gain-partie-1">
+<h3>Choix du gain (Partie 1)<a class="headerlink" href="#choix-du-gain-partie-1" title="Permalink to this headline">#</a></h3>
+<p>La seconde étape consiste à calibrer “grossièrement” le gain proportionnel du correcteur. Pour calibrer ce gain, nous allons exploiter
+le comportement à la résonance. En approximant le comportement du système en boucle fermée par un second ordre, le facteur de résonance <span class="math notranslate nohighlight">\(M_{dB}\)</span>
+s’obtient à partir du coefficient d’amortissement <span class="math notranslate nohighlight">\(m\)</span> en utilisant les abaques. Comme le correcteur PI permet d’obtenir un système précis en boucle fermée, le gain statique en BF est égal à 1 en valeur naturelle c-à-d <span class="math notranslate nohighlight">\(G_0=0\)</span> dB.
+Il en vient que <span class="math notranslate nohighlight">\(M_{dB}=G_m-G_0=G_m\)</span> dB. Nous allons donc
+appliquer un gain <span class="math notranslate nohighlight">\(K_1\)</span> de sorte à venir tangenter <strong>directement</strong> le contour isogain <span class="math notranslate nohighlight">\(G_m\)</span> dB.</p>
+<ul class="simple">
+<li><p>En utilisant les <a class="reference external" href="https://vincentchoqueuse.github.io/web_app_2nd_order_performances/index.html">Abaque de second ordre</a>, nous trouvons pour <span class="math notranslate nohighlight">\(m=0.52\)</span> un facteur de résonance de <span class="math notranslate nohighlight">\(M_{dB}=1\)</span> dB.</p></li>
+<li><p>Le gain maximum en boucle fermée est égal à <span class="math notranslate nohighlight">\(G_m=1\)</span> dB.</p></li>
+<li><p>Pour venir tangenter le contour iso-gain <span class="math notranslate nohighlight">\(G_m=1\)</span> dB, nous devons appliquer un gain <span class="math notranslate nohighlight">\(K_{1}(dB)=14.2\)</span> dB c-à-d <span class="math notranslate nohighlight">\(K_1=10^{\frac{K_{1}(dB)}{20}}\approx 5.12\)</span> en valeur naturelle.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">K1dB</span> <span class="o">=</span> <span class="mf">14.2</span>
+<span class="n">K1</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="n">K1dB</span><span class="o">/</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">nichols</span><span class="p">([</span><span class="n">F</span><span class="p">,</span> <span class="n">K1</span><span class="o">*</span><span class="n">F</span><span class="p">],</span> <span class="n">cm</span><span class="o">=</span><span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">],</span> <span class="n">show_phase</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>La figure suivante présente le comportement fréquentiel du système original (bleu) et du système avec apport d’un gain <span class="math notranslate nohighlight">\(K_1\)</span> (orange).</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../../_images/PI_2.png"><img alt="../../_images/PI_2.png" src="../../_images/PI_2.png" style="width: 700px;" /></a>
+<figcaption>
+<p><span class="caption-text">Diagramme de Black Nichols : correction proportionnelle</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="choix-du-parametre-ti">
+<h3>Choix du paramètre Ti<a class="headerlink" href="#choix-du-parametre-ti" title="Permalink to this headline">#</a></h3>
+<p>La troisième étape consiste à régler le paramètre <span class="math notranslate nohighlight">\(T_i\)</span>. L’action intégral du correcteur va entrainer un déphasage de -90 degrées en basse-fréquences (translation vers la gauche).
+Il est alors important de bien calibrer le paramètre <span class="math notranslate nohighlight">\(T_i\)</span> pour éviter que ce décalage n’impacte la marge de phase.</p>
+<p>Pour ne pas modifier le point de résonance obtenu, on choisit la pulsation de cassure <span class="math notranslate nohighlight">\(1/T_i\)</span> suffisamment éloignée de <span class="math notranslate nohighlight">\(\omega_r\)</span> (pulsation de résonance au point de tangence) de telle manière à ne pas introduire un déphasage supplémentaire en ce point.
+Généralement, il faut fixer</p>
+<div class="math notranslate nohighlight">
+\[1/Ti \le \omega_r/5\]</div>
+<ul class="simple">
+<li><p>Graphiquement, nous trouvons une pulsation de résonance égale à <span class="math notranslate nohighlight">\(\omega_r=2\)</span> rad/s.</p></li>
+<li><p>En prenant <span class="math notranslate nohighlight">\(1/Ti=\omega_r/5\)</span> nous obtenons <span class="math notranslate nohighlight">\(T_i=2.5\)</span> s.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wr</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">Ti</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">wr</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">Cp</span> <span class="o">=</span> <span class="n">tf</span><span class="p">([</span><span class="n">K1</span><span class="o">*</span><span class="n">Ti</span><span class="p">,</span> <span class="n">K1</span><span class="p">],</span> <span class="p">[</span><span class="n">Ti</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">nichols</span><span class="p">([</span><span class="n">F</span><span class="p">,</span> <span class="n">K1</span><span class="o">*</span><span class="n">F</span><span class="p">,</span> <span class="n">Cp</span><span class="o">*</span><span class="n">F</span><span class="p">],</span><span class="n">cm</span><span class="o">=</span><span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">],</span> <span class="n">show_phase</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>La figure suivante présente le comportement fréquentiel du système original (bleu), du système avec apport d’un gain <span class="math notranslate nohighlight">\(K_1\)</span> (orange), et du système avec un correcteur PI
+de paramètres <span class="math notranslate nohighlight">\(K_1\)</span> et <span class="math notranslate nohighlight">\(T_i\)</span> (vert).</p>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="../../_images/PI_3.png"><img alt="../../_images/PI_3.png" src="../../_images/PI_3.png" style="width: 700px;" /></a>
+<figcaption>
+<p><span class="caption-text">Diagramme de Black Nichols : correction PI (gain <span class="math notranslate nohighlight">\(K_1\)</span>)</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="choix-du-gain-partie-2">
+<h3>Choix du gain (Partie 2)<a class="headerlink" href="#choix-du-gain-partie-2" title="Permalink to this headline">#</a></h3>
+<p>L’utilisation de l’intégration intégrale peut modifier légèrement le comportement à la résonance. La dernière étape consiste à ajuster
+le gain de manière à retrouver la résonance recherchée.</p>
+<ul class="simple">
+<li><p>Graphiquement, nous observons que la courbe verte doit être baissée de <span class="math notranslate nohighlight">\(K_2 (dB)=-4\)</span> dB pour retrouver la résonance recherchée.</p></li>
+<li><p>Le gain du correcteur doit alors être fixée à <span class="math notranslate nohighlight">\(K_i =K_1\times K_2\)</span> avec <span class="math notranslate nohighlight">\(K_2=10^{-4/20}=0.63\)</span>.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">K2dB</span> <span class="o">=</span> <span class="o">-</span><span class="mi">4</span>
+<span class="n">K2</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="n">K2dB</span><span class="o">/</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">Ki</span> <span class="o">=</span> <span class="n">K1</span><span class="o">*</span><span class="n">K2</span>
+<span class="n">Cp2</span> <span class="o">=</span> <span class="n">tf</span><span class="p">([</span><span class="n">Ki</span><span class="o">*</span><span class="n">Ti</span><span class="p">,</span> <span class="n">Ki</span><span class="p">],</span> <span class="p">[</span><span class="n">Ti</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">nichols</span><span class="p">([</span><span class="n">F</span><span class="p">,</span> <span class="n">K1</span><span class="o">*</span><span class="n">F</span><span class="p">,</span> <span class="n">Cp</span><span class="o">*</span><span class="n">F</span><span class="p">,</span> <span class="n">Cp2</span><span class="o">*</span><span class="n">F</span><span class="p">],</span><span class="n">cm</span><span class="o">=</span><span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">],</span> <span class="n">show_phase</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>La figure suivante présente le comportement fréquentiel du système original (bleu), du système avec apport d’un gain <span class="math notranslate nohighlight">\(K_1\)</span> (orange), du système avec un correcteur PI
+de paramètres <span class="math notranslate nohighlight">\(K_1\)</span> et <span class="math notranslate nohighlight">\(T_i\)</span> (vert), du système avec un correcteur PI
+de paramètres <span class="math notranslate nohighlight">\(K_i\)</span> et <span class="math notranslate nohighlight">\(T_i\)</span> (rouge).</p>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="../../_images/PI_4.png"><img alt="../../_images/PI_4.png" src="../../_images/PI_4.png" style="width: 700px;" /></a>
+<figcaption>
+<p><span class="caption-text">Diagramme de Black Nichols : correction PI (gain <span class="math notranslate nohighlight">\(K_i\)</span>)</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="verification">
+<h2>Vérification<a class="headerlink" href="#verification" title="Permalink to this headline">#</a></h2>
+<p>La figure suivante présente la réponse indicielle du système en boucle fermée. Nous trouvons un premier dépassement relatif d’environ <span class="math notranslate nohighlight">\(13\%\)</span> et donc un facteur d’amortissement égal à <span class="math notranslate nohighlight">\(m=0.54\)</span>, ce qui est très proche du cahier des charges.
+Concernant la précision, nous constatons bien l’influence du PI qui permet d’atteindre un gain statique unitaire en boucle fermée.</p>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="../../_images/PI_5.png"><img alt="../../_images/PI_5.png" src="../../_images/PI_5.png" style="width: 700px;" /></a>
+<figcaption>
+<p><span class="caption-text">Réponse indicielle du système corrigé en boucle fermée (échelon unité)</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="nichols2.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Correction P</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../discrets/index.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Systèmes à temps discret</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2022, V. Choqueuse.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>
