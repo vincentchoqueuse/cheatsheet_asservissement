@@ -1,18 +1,22 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Correction PI &#8212; pydata_theme  documentation</title>
-    
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
 
-    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
   <link rel="stylesheet"
     href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
@@ -23,13 +27,14 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
-    
+
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="author" title="About these documents" href="../../about.html" />
@@ -37,34 +42,41 @@
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Systèmes à temps discret" href="../discrets/index.html" />
     <link rel="prev" title="Correction P" href="nichols2.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
 
     
-    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
 
   <div id="navbar-start">
     
     
+  
 
-<a class="navbar-brand" href="../../index.html">
-  <img src="../../_static/logo.png" class="logo" alt="logo">
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
 </a>
-
-
     
   </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="fas fa-bars"></span>
   </button>
 
   
@@ -112,6 +124,14 @@
     <div id="navbar-end">
       
       <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
           <a class="nav-link" href="https://github.com/vincentchoqueuse/cheatsheet_asservissement" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
@@ -126,13 +146,13 @@
     </nav>
     
 
-    <div class="container-xl">
-      <div class="row">
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
           
-            
-            <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar">
-              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -236,19 +256,20 @@
 
   </div>
 </nav>
-              </div>
-              <div class="sidebar-end-items">
-              </div>
-            </div>
-            
-          
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
 
           
-          <div class="d-none d-xl-block col-xl-2 bd-toc">
-            
-              
-              <div class="toc-item">
-                
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
 <div class="tocsection onthispage mt-5 pt-1 pb-3">
     <i class="fas fa-list"></i> On this page
 </div>
@@ -295,28 +316,26 @@
 </ul>
 
 </nav>
-              </div>
-              
-              <div class="toc-item">
-                
-              </div>
-              
-            
-          </div>
-          
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
+
 
           
           
-            
-          
-          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+          <div class="bd-content col-12 col-md-9 col-xl-7">
               
-              <div>
+              <article class="bd-article" role="main">
                 
   <section id="correction-pi">
-<h1>Correction PI<a class="headerlink" href="#correction-pi" title="Permalink to this headline">#</a></h1>
+<h1>Correction PI<a class="headerlink" href="#correction-pi" title="Permalink to this heading">#</a></h1>
 <section id="contexte">
-<h2>Contexte<a class="headerlink" href="#contexte" title="Permalink to this headline">#</a></h2>
+<h2>Contexte<a class="headerlink" href="#contexte" title="Permalink to this heading">#</a></h2>
 <p>Dans ce tutorial, nous nous intéressons à la correction d’un système de 2ieme ordre avec un retour unitaire.</p>
 <figure class="align-center">
 <a class="reference internal image-reference" href="../../_images/closed_loop_2.svg"><img alt="Boucle Fermée avec Retour unitaire" src="../../_images/closed_loop_2.svg" width="350" /></a>
@@ -331,14 +350,14 @@
 </ul>
 </section>
 <section id="calibration">
-<h2>Calibration<a class="headerlink" href="#calibration" title="Permalink to this headline">#</a></h2>
+<h2>Calibration<a class="headerlink" href="#calibration" title="Permalink to this heading">#</a></h2>
 <p>Pour respecter ce cahier des charges, nous allons utiliser un correcteur proportionnel intégrale (PI) :</p>
 <div class="math notranslate nohighlight">
 \[C(p) = K_i \left(1+ \frac{1}{T_ip}\right) = K_i \frac{T_i p+1}{T_ip}\]</div>
 <p>Dans ce tutorial, nous allons calibrer les paramètres du correcteur, c-à-d <span class="math notranslate nohighlight">\(K_i\)</span> et <span class="math notranslate nohighlight">\(T_i\)</span>, directement dans le plan
 de Black Nichols.</p>
 <section id="black-nichols">
-<h3>Black-Nichols<a class="headerlink" href="#black-nichols" title="Permalink to this headline">#</a></h3>
+<h3>Black-Nichols<a class="headerlink" href="#black-nichols" title="Permalink to this heading">#</a></h3>
 <p>Dans un premier temps, nous allons représenter le comportement fréquentiel du système <span class="math notranslate nohighlight">\(F(p)\)</span> en boucle ouverte.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">control</span> <span class="kn">import</span> <span class="n">tf</span><span class="p">,</span> <span class="n">feedback</span>
 <span class="kn">from</span> <span class="nn">control_plotly</span> <span class="kn">import</span> <span class="n">bode</span><span class="p">,</span><span class="n">nichols</span><span class="p">,</span> <span class="n">step</span>
@@ -355,7 +374,7 @@ de Black Nichols.</p>
 </figure>
 </section>
 <section id="choix-du-gain-partie-1">
-<h3>Choix du gain (Partie 1)<a class="headerlink" href="#choix-du-gain-partie-1" title="Permalink to this headline">#</a></h3>
+<h3>Choix du gain (Partie 1)<a class="headerlink" href="#choix-du-gain-partie-1" title="Permalink to this heading">#</a></h3>
 <p>La seconde étape consiste à calibrer “grossièrement” le gain proportionnel du correcteur. Pour calibrer ce gain, nous allons exploiter
 le comportement à la résonance. En approximant le comportement du système en boucle fermée par un second ordre, le facteur de résonance <span class="math notranslate nohighlight">\(M_{dB}\)</span>
 s’obtient à partir du coefficient d’amortissement <span class="math notranslate nohighlight">\(m\)</span> en utilisant les abaques. Comme le correcteur PI permet d’obtenir un système précis en boucle fermée, le gain statique en BF est égal à 1 en valeur naturelle c-à-d <span class="math notranslate nohighlight">\(G_0=0\)</span> dB.
@@ -380,7 +399,7 @@ appliquer un gain <span class="math notranslate nohighlight">\(K_1\)</span> de s
 </figure>
 </section>
 <section id="choix-du-parametre-ti">
-<h3>Choix du paramètre Ti<a class="headerlink" href="#choix-du-parametre-ti" title="Permalink to this headline">#</a></h3>
+<h3>Choix du paramètre Ti<a class="headerlink" href="#choix-du-parametre-ti" title="Permalink to this heading">#</a></h3>
 <p>La troisième étape consiste à régler le paramètre <span class="math notranslate nohighlight">\(T_i\)</span>. L’action intégral du correcteur va entrainer un déphasage de -90 degrées en basse-fréquences (translation vers la gauche).
 Il est alors important de bien calibrer le paramètre <span class="math notranslate nohighlight">\(T_i\)</span> pour éviter que ce décalage n’impacte la marge de phase.</p>
 <p>Pour ne pas modifier le point de résonance obtenu, on choisit la pulsation de cassure <span class="math notranslate nohighlight">\(1/T_i\)</span> suffisamment éloignée de <span class="math notranslate nohighlight">\(\omega_r\)</span> (pulsation de résonance au point de tangence) de telle manière à ne pas introduire un déphasage supplémentaire en ce point.
@@ -407,7 +426,7 @@ de paramètres <span class="math notranslate nohighlight">\(K_1\)</span> et <spa
 </figure>
 </section>
 <section id="choix-du-gain-partie-2">
-<h3>Choix du gain (Partie 2)<a class="headerlink" href="#choix-du-gain-partie-2" title="Permalink to this headline">#</a></h3>
+<h3>Choix du gain (Partie 2)<a class="headerlink" href="#choix-du-gain-partie-2" title="Permalink to this heading">#</a></h3>
 <p>L’utilisation de l’intégration intégrale peut modifier légèrement le comportement à la résonance. La dernière étape consiste à ajuster
 le gain de manière à retrouver la résonance recherchée.</p>
 <ul class="simple">
@@ -433,7 +452,7 @@ de paramètres <span class="math notranslate nohighlight">\(K_i\)</span> et <spa
 </section>
 </section>
 <section id="verification">
-<h2>Vérification<a class="headerlink" href="#verification" title="Permalink to this headline">#</a></h2>
+<h2>Vérification<a class="headerlink" href="#verification" title="Permalink to this heading">#</a></h2>
 <p>La figure suivante présente la réponse indicielle du système en boucle fermée. Nous trouvons un premier dépassement relatif d’environ <span class="math notranslate nohighlight">\(13\%\)</span> et donc un facteur d’amortissement égal à <span class="math notranslate nohighlight">\(m=0.54\)</span>, ce qui est très proche du cahier des charges.
 Concernant la précision, nous constatons bien l’influence du PI qui permet d’atteindre un gain statique unitaire en boucle fermée.</p>
 <figure class="align-center" id="id5">
@@ -446,51 +465,55 @@ Concernant la précision, nous constatons bien l’influence du PI qui permet d�
 </section>
 
 
-              </div>
+              </article>
               
-              
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="nichols2.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Correction P</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="../discrets/index.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Systèmes à temps discret</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-              
-          </main>
-          
 
+              
+              <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="nichols2.html" title="previous page">
+      <i class="fas fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Correction P</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="../discrets/index.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Systèmes à temps discret</p>
+  </div>
+  <i class="fas fa-angle-right"></i>
+  </a>
+</div>
+              </footer>
+              
+          </div>
+          
       </div>
     </div>
+
+  
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-<footer class="footer mt-5 mt-md-0">
-  <div class="container">
-    
-    <div class="footer-item">
-      <p class="copyright">
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
     &copy; Copyright 2022, V. Choqueuse.<br>
 </p>
-    </div>
-    
-    <div class="footer-item">
-      <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
-</p>
-    </div>
-    
   </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br>
+</p>
+  </div>
+  
+</div>
 </footer>
   </body>
 </html>

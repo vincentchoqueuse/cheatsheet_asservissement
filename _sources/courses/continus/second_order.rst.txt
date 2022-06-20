@@ -197,7 +197,7 @@ La réponse indicielle s'exprime sous la forme :
 
 .. math ::
 
-    D_r(\%)=\frac{\max[s(t)]-s(\infty)}{s(\infty)} =e^{\frac{-\pi m}{\sqrt{1-m^2}}}
+    D_r(\%)=100\times \frac{\max[s(t)]-s(\infty)}{s(\infty)} =100\times e^{\frac{-\pi m}{\sqrt{1-m^2}}}
 
 
 .. note ::
