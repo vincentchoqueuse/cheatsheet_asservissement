@@ -1,22 +1,16 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Systèmes de 2nd ordre &#8212; pydata_theme  documentation</title>
-<script>
-  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
-</script>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
-
-
+    
   <link rel="stylesheet"
     href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
@@ -24,59 +18,56 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/css/blank.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
-
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Liste des correcteurs" href="correction.html" />
     <link rel="prev" title="Systèmes de 1er ordre" href="first_order.html" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="docsearch:language" content="en">
-  </head>
-  
-  
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
-    <div class="bd-header-announcement container-fluid" id="banner">
-      
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
 
-    </div>
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
 
     
-    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
 
   <div id="navbar-start">
     
     
-  
 
-
-<a class="navbar-brand logo" href="../../index.html">
-  
-  
-  
-  
-    <img src="../../_static/logo.png" class="logo__image only-light" alt="Logo image">
-    <img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image">
-  
-  
+<a class="navbar-brand" href="../../index.html">
+  <img src="../../_static/logo.png" class="logo" alt="logo">
 </a>
+
+
     
   </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="fas fa-bars"></span>
+    <span class="navbar-toggler-icon"></span>
   </button>
 
   
@@ -124,18 +115,12 @@
     <div id="navbar-end">
       
       <div class="navbar-end-item">
-        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
-    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
-    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
-    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
-</span>
-      </div>
-      
-      <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/vincentchoqueuse/cheatsheet_asservissement" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label></a>
+          <a class="nav-link" href="https://github.com/vincentchoqueuse/cheatsheet_asservissement" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
         </li>
       </ul>
       </div>
@@ -146,18 +131,17 @@
     </nav>
     
 
-    <div class="bd-container container-xl">
-      <div class="bd-container__inner row">
+    <div class="container-xl">
+      <div class="row">
           
-
-<!-- Only show if we have sidebars configured, else just a small margin  -->
-<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
-  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
-    <p aria-level="2" class="caption" role="heading">
+    <p>
  <span class="caption-text">
   Contents:
  </span>
@@ -256,21 +240,17 @@
 
   </div>
 </nav>
-  </div>
-  <div class="sidebar-end-items">
-  </div>
-</div>
-
-
+            </div>
+            
           
 
-
-<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
-  
-    
-    <div class="toc-item">
-      
-<div class="tocsection onthispage mt-5 pt-1 pb-3">
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
     <i class="fas fa-list"></i> On this page
 </div>
 
@@ -329,7 +309,7 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
+    <a class="reference internal nav-link" href="#cas-ou-m-1-1">
      Cas où
      <span class="math notranslate nohighlight">
       \(m&lt;1\)
@@ -337,7 +317,7 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
+    <a class="reference internal nav-link" href="#identification-1">
      Identification
     </a>
    </li>
@@ -359,7 +339,7 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
+    <a class="reference internal nav-link" href="#identification-2">
      Identification
     </a>
    </li>
@@ -368,28 +348,30 @@
 </ul>
 
 </nav>
-    </div>
-    
-    <div class="toc-item">
-      
-    </div>
-    
-  
-</div>
-
-
-          
-          
-          <div class="bd-content col-12 col-md-9 col-xl-7">
+              </div>
               
-              <article class="bd-article" role="main">
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
                 
   <section id="systemes-de-2nd-ordre">
-<h1>Systèmes de 2nd ordre<a class="headerlink" href="#systemes-de-2nd-ordre" title="Permalink to this heading">#</a></h1>
+<h1>Systèmes de 2nd ordre<a class="headerlink" href="#systemes-de-2nd-ordre" title="Permalink to this headline">¶</a></h1>
 <section id="modelisation">
-<h2>Modélisation<a class="headerlink" href="#modelisation" title="Permalink to this heading">#</a></h2>
+<h2>Modélisation<a class="headerlink" href="#modelisation" title="Permalink to this headline">¶</a></h2>
 <section id="equation-differentielle">
-<h3>Equation Différentielle<a class="headerlink" href="#equation-differentielle" title="Permalink to this heading">#</a></h3>
+<h3>Equation Différentielle<a class="headerlink" href="#equation-differentielle" title="Permalink to this headline">¶</a></h3>
 <p>Pour un système passe-bas linéaire d’ordre 2, le lien entre l’entrée et la sortie peut être décrit par une équation différentielle de second ordre à coefficients constants.</p>
 <div class="math notranslate nohighlight">
 \[\frac{1}{\omega_n^2}\frac{d^2 s(t)}{dt^2}+\frac{2m}{\omega_n}\frac{d s(t)}{dt}+s(t)=Ke(t)\]</div>
@@ -404,16 +386,16 @@
 </ul>
 </section>
 <section id="fonction-de-transfert">
-<h3>Fonction de Transfert<a class="headerlink" href="#fonction-de-transfert" title="Permalink to this heading">#</a></h3>
+<h3>Fonction de Transfert<a class="headerlink" href="#fonction-de-transfert" title="Permalink to this headline">¶</a></h3>
 <p>La fonction de transfert d’un système passe-bas de second ordre est donnée par :</p>
 <div class="math notranslate nohighlight">
 \[H(p)=\frac{K}{\frac{1}{\omega_n^2}p^2+\frac{2m}{\omega_n}p+1}\]</div>
 </section>
 </section>
 <section id="poles">
-<h2>Pôles<a class="headerlink" href="#poles" title="Permalink to this heading">#</a></h2>
+<h2>Pôles<a class="headerlink" href="#poles" title="Permalink to this headline">¶</a></h2>
 <section id="expression">
-<h3>Expression<a class="headerlink" href="#expression" title="Permalink to this heading">#</a></h3>
+<h3>Expression<a class="headerlink" href="#expression" title="Permalink to this headline">¶</a></h3>
 <p>Les pôles correspondent aux valeurs de <span class="math notranslate nohighlight">\(p\)</span> pour lesquelles</p>
 <div class="math notranslate nohighlight">
 \[\frac{1}{\omega_n^2}p^2+\frac{2m}{\omega_n}p+1 = 0\]</div>
@@ -442,13 +424,13 @@
 </ul>
 </section>
 <section id="exemple">
-<h3>Exemple<a class="headerlink" href="#exemple" title="Permalink to this heading">#</a></h3>
+<h3>Exemple<a class="headerlink" href="#exemple" title="Permalink to this headline">¶</a></h3>
 <figure class="align-default">
 <img alt="../../_images/second_order-1.png" class="plot-directive" src="../../_images/second_order-1.png" />
 </figure>
 </section>
 <section id="identification">
-<h3>Identification<a class="headerlink" href="#identification" title="Permalink to this heading">#</a></h3>
+<h3>Identification<a class="headerlink" href="#identification" title="Permalink to this headline">¶</a></h3>
 <p>Lorsque <span class="math notranslate nohighlight">\(0\le m&lt;1\)</span>, l’identification de la pulsation propre et coefficient d’amortissement peut s’obtenir de la manière suivante:</p>
 <ul class="simple">
 <li><p>Pulsation propre: la pulsation propre correspond au module des pôles c-à-d <span class="math notranslate nohighlight">\(\omega_n=|p_{k}|\)</span>,</p></li>
@@ -458,9 +440,9 @@
 </section>
 </section>
 <section id="reponse-indicielle">
-<h2>Réponse Indicielle<a class="headerlink" href="#reponse-indicielle" title="Permalink to this heading">#</a></h2>
+<h2>Réponse Indicielle<a class="headerlink" href="#reponse-indicielle" title="Permalink to this headline">¶</a></h2>
 <section id="cas-ou-m-1">
-<h3>Cas où <span class="math notranslate nohighlight">\(m&gt;1\)</span><a class="headerlink" href="#cas-ou-m-1" title="Permalink to this heading">#</a></h3>
+<h3>Cas où <span class="math notranslate nohighlight">\(m&gt;1\)</span><a class="headerlink" href="#cas-ou-m-1" title="Permalink to this headline">¶</a></h3>
 <p>La figure suivante présente l’allure de la réponse indicielle lorsque <span class="math notranslate nohighlight">\(m&gt;1\)</span>. Dans ce contexte, la réponse est monotone et ne présente pas de
 dépassement.</p>
 <figure class="align-default">
@@ -477,8 +459,8 @@ dépassement.</p>
 <li><p>Pas de dépassement : <span class="math notranslate nohighlight">\(s(\infty)=\max(s(t))=KE\)</span>.</p></li>
 </ul>
 </section>
-<section id="id1">
-<h3>Cas où <span class="math notranslate nohighlight">\(m&lt;1\)</span><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<section id="cas-ou-m-1-1">
+<h3>Cas où <span class="math notranslate nohighlight">\(m&lt;1\)</span><a class="headerlink" href="#cas-ou-m-1-1" title="Permalink to this headline">¶</a></h3>
 <p>La figure suivante présente l’allure de la réponse indicielle lorsque <span class="math notranslate nohighlight">\(m&lt;1\)</span>. Dans ce contexte, la réponse présente un dépassement plus ou moins important
 et des oscillations de pseudo-pulsation <span class="math notranslate nohighlight">\(\omega_p\)</span>. Pour analyser les performances d’un système de second ordre lorsque <span class="math notranslate nohighlight">\(m&lt;1\)</span>, nous utilisons principalement des abaques.</p>
 <figure class="align-default">
@@ -504,10 +486,10 @@ et des oscillations de pseudo-pulsation <span class="math notranslate nohighligh
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>En pratique, nous utiliserons des abaques pour déterminer le temps de réponse et le premier dépassement relatif : <a class="reference external" href="https://vincentchoqueuse.github.io/ENIB_tools/control_settling_time.html">https://vincentchoqueuse.github.io/ENIB_tools/control_settling_time.html</a></p>
-</div>
+</aside>
 </section>
-<section id="id2">
-<h3>Identification<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<section id="identification-1">
+<h3>Identification<a class="headerlink" href="#identification-1" title="Permalink to this headline">¶</a></h3>
 <p>Lorsque <span class="math notranslate nohighlight">\(m&lt;1\)</span>, l’identification graphique des paramètres peut s’obtenir de la manière suivante:</p>
 <ul class="simple">
 <li><p>Gain statique: le gain statique s’obtient à partir de la valeur finale via la relation <span class="math notranslate nohighlight">\(K = s(\infty)/E\)</span>.</p></li>
@@ -517,12 +499,12 @@ et des oscillations de pseudo-pulsation <span class="math notranslate nohighligh
 </section>
 </section>
 <section id="reponse-frequentielle">
-<h2>Réponse Fréquentielle<a class="headerlink" href="#reponse-frequentielle" title="Permalink to this heading">#</a></h2>
+<h2>Réponse Fréquentielle<a class="headerlink" href="#reponse-frequentielle" title="Permalink to this headline">¶</a></h2>
 <p>La réponse fréquentielle s’obtient en posant <span class="math notranslate nohighlight">\(p=j\omega\)</span> où <span class="math notranslate nohighlight">\(\omega\)</span> désigne la pulsation (en rad/s). La réponse fréquentielle d’un système passe-bas de premier ordre est donnée par :</p>
 <div class="math notranslate nohighlight">
 \[H(j\omega)=\frac{K}{1-\frac{\omega^2}{\omega_n^2}+j\frac{2m\omega }{\omega_n}}\]</div>
 <section id="module">
-<h3>Module<a class="headerlink" href="#module" title="Permalink to this heading">#</a></h3>
+<h3>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h3>
 <p>La figure suivante présente l’allure le module de la réponse fréquentielle. Lorsque <span class="math notranslate nohighlight">\(m&lt;0.7\)</span>, le module présente un maximum à la pulsation de
 résonance <span class="math notranslate nohighlight">\(\omega_r\)</span>.</p>
 <figure class="align-default">
@@ -558,10 +540,10 @@ résonance <span class="math notranslate nohighlight">\(\omega_r\)</span>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>En pratique, nous utiliserons des abaques pour déterminer le facteur de résonance en dB : <a class="reference external" href="https://vincentchoqueuse.github.io/ENIB_tools/control_resonance.html">https://vincentchoqueuse.github.io/ENIB_tools/control_resonance.html</a></p>
-</div>
+</aside>
 </section>
 <section id="argument">
-<h3>Argument<a class="headerlink" href="#argument" title="Permalink to this heading">#</a></h3>
+<h3>Argument<a class="headerlink" href="#argument" title="Permalink to this headline">¶</a></h3>
 <figure class="align-default">
 <img alt="../../_images/second_order-5.png" class="plot-directive" src="../../_images/second_order-5.png" />
 </figure>
@@ -576,8 +558,8 @@ résonance <span class="math notranslate nohighlight">\(\omega_r\)</span>.</p>
 <li><p>Déphasage à la pulsation propre : <span class="math notranslate nohighlight">\(\arg[H(j\omega_n)]=-90^o\)</span>.</p></li>
 </ul>
 </section>
-<section id="id3">
-<h3>Identification<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<section id="identification-2">
+<h3>Identification<a class="headerlink" href="#identification-2" title="Permalink to this headline">¶</a></h3>
 <p>L’identification graphique des paramètres peut s’obtenir de la manière suivante:</p>
 <ul class="simple">
 <li><p>Gain statique: le gain statique correspond à la valeur du module en basse-fréquence. Si le module est affiché en dB, la valeur du module s’obtient via l’expression <span class="math notranslate nohighlight">\(K = 10^{G_0/20}\)</span>. Attention à bien vérifier que la phase évolue de <span class="math notranslate nohighlight">\(0\)</span> à <span class="math notranslate nohighlight">\(-180^o\)</span>. Si ca n’est pas le cas, le gain est négatif.</p></li>
@@ -594,55 +576,50 @@ résonance <span class="math notranslate nohighlight">\(\omega_r\)</span>.</p>
 </section>
 
 
-              </article>
+              </div>
               
-
               
-              <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-  <a class='left-prev' id="prev-link" href="first_order.html" title="previous page">
-      <i class="fas fa-angle-left"></i>
-      <div class="prev-next-info">
-          <p class="prev-next-subtitle">previous</p>
-          <p class="prev-next-title">Systèmes de 1er ordre</p>
-      </div>
-  </a>
-  <a class='right-next' id="next-link" href="correction.html" title="next page">
-  <div class="prev-next-info">
-      <p class="prev-next-subtitle">next</p>
-      <p class="prev-next-title">Liste des correcteurs</p>
-  </div>
-  <i class="fas fa-angle-right"></i>
-  </a>
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="first_order.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Systèmes de 1er ordre</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="correction.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Liste des correcteurs</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-              </footer>
               
-          </div>
+          </main>
           
+
       </div>
     </div>
-
   
-  
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
-
-<footer class="bd-footer"><div class="bd-footer__inner container">
-  
-  <div class="footer-item">
-    <p class="copyright">
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
     &copy; Copyright 2022, V. Choqueuse.<br>
 </p>
-  </div>
-  
-  <div class="footer-item">
-    <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.<br>
 </p>
+    </div>
+    
   </div>
-  
-</div>
 </footer>
   </body>
 </html>

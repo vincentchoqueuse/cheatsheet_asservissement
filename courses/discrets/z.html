@@ -1,22 +1,16 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Transformée en Z &#8212; pydata_theme  documentation</title>
-<script>
-  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
-</script>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
-
-
+    
   <link rel="stylesheet"
     href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
@@ -24,59 +18,56 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/css/blank.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
-
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Systèmes SLIT" href="analyse.html" />
     <link rel="prev" title="Systèmes à temps discret" href="index.html" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="docsearch:language" content="en">
-  </head>
-  
-  
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
-    <div class="bd-header-announcement container-fluid" id="banner">
-      
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
 
-    </div>
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
 
     
-    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
 
   <div id="navbar-start">
     
     
-  
 
-
-<a class="navbar-brand logo" href="../../index.html">
-  
-  
-  
-  
-    <img src="../../_static/logo.png" class="logo__image only-light" alt="Logo image">
-    <img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image">
-  
-  
+<a class="navbar-brand" href="../../index.html">
+  <img src="../../_static/logo.png" class="logo" alt="logo">
 </a>
+
+
     
   </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="fas fa-bars"></span>
+    <span class="navbar-toggler-icon"></span>
   </button>
 
   
@@ -124,18 +115,12 @@
     <div id="navbar-end">
       
       <div class="navbar-end-item">
-        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
-    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
-    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
-    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
-</span>
-      </div>
-      
-      <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/vincentchoqueuse/cheatsheet_asservissement" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label></a>
+          <a class="nav-link" href="https://github.com/vincentchoqueuse/cheatsheet_asservissement" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
         </li>
       </ul>
       </div>
@@ -146,18 +131,17 @@
     </nav>
     
 
-    <div class="bd-container container-xl">
-      <div class="bd-container__inner row">
+    <div class="container-xl">
+      <div class="row">
           
-
-<!-- Only show if we have sidebars configured, else just a small margin  -->
-<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
-  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
-    <p aria-level="2" class="caption" role="heading">
+    <p>
  <span class="caption-text">
   Contents:
  </span>
@@ -256,21 +240,17 @@
 
   </div>
 </nav>
-  </div>
-  <div class="sidebar-end-items">
-  </div>
-</div>
-
-
+            </div>
+            
           
 
-
-<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
-  
-    
-    <div class="toc-item">
-      
-<div class="tocsection onthispage mt-5 pt-1 pb-3">
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
     <i class="fas fa-list"></i> On this page
 </div>
 
@@ -318,33 +298,35 @@
 </ul>
 
 </nav>
-    </div>
-    
-    <div class="toc-item">
-      
-    </div>
-    
-  
-</div>
-
-
-          
-          
-          <div class="bd-content col-12 col-md-9 col-xl-7">
+              </div>
               
-              <article class="bd-article" role="main">
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
                 
   <section id="transformee-en-z">
-<h1>Transformée en Z<a class="headerlink" href="#transformee-en-z" title="Permalink to this heading">#</a></h1>
+<h1>Transformée en Z<a class="headerlink" href="#transformee-en-z" title="Permalink to this headline">¶</a></h1>
 <section id="definition">
-<h2>Définition<a class="headerlink" href="#definition" title="Permalink to this heading">#</a></h2>
+<h2>Définition<a class="headerlink" href="#definition" title="Permalink to this headline">¶</a></h2>
 <p>La transformée en Z unilatérale d’une suite numérique <span class="math notranslate nohighlight">\(x[n]\)</span> est définie par l’équation :</p>
 <div class="math notranslate nohighlight">
 \[X(z)= \mathcal{Z}[x[n]] = \sum_{n=0}^{\infty}x[n]z^{-n}\]</div>
 <p>où <span class="math notranslate nohighlight">\(z\)</span> est une variable complexe.</p>
 <p>La transformée de Z d’un signal ne converge pas nécessairement pour tout <span class="math notranslate nohighlight">\(z\)</span>. Il est alors nécessaire de préciser la région de convergence (ROC) pour laquelle la série converge c-a-d les valeurs de <span class="math notranslate nohighlight">\(z\)</span> telles que <span class="math notranslate nohighlight">\(|X(z)|&lt;\infty\)</span>.</p>
 <section id="exemple">
-<h3>Exemple<a class="headerlink" href="#exemple" title="Permalink to this heading">#</a></h3>
+<h3>Exemple<a class="headerlink" href="#exemple" title="Permalink to this headline">¶</a></h3>
 <p>Soit <span class="math notranslate nohighlight">\(x[n]=u[n]\)</span>, l’échelon unité défini par :</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}u[n] =\left\{\begin{array}{cl} 1 &amp; \text{ si }n\ge 0\\
@@ -361,7 +343,7 @@ la somme des éléments d’une suite géométrique de raison <span class="math 
 </section>
 </section>
 <section id="proprietes">
-<h2>Propriétés<a class="headerlink" href="#proprietes" title="Permalink to this heading">#</a></h2>
+<h2>Propriétés<a class="headerlink" href="#proprietes" title="Permalink to this headline">¶</a></h2>
 <p>La transformée en Z possède les propriétés suivantes :</p>
 <ul class="simple">
 <li><p>Linéarité: Si <span class="math notranslate nohighlight">\(y[n]=\alpha x_1[n]+\beta x_2[n]\)</span> où <span class="math notranslate nohighlight">\(\alpha\)</span> et <span class="math notranslate nohighlight">\(\beta\)</span> sont des constantes, alors</p></li>
@@ -395,9 +377,9 @@ la somme des éléments d’une suite géométrique de raison <span class="math 
 \[\lim_{n\to \infty} x[n]=\lim_{z\to 1}(z-1)X(z)\]</div>
 </section>
 <section id="signaux-usuels">
-<h2>Signaux Usuels<a class="headerlink" href="#signaux-usuels" title="Permalink to this heading">#</a></h2>
+<h2>Signaux Usuels<a class="headerlink" href="#signaux-usuels" title="Permalink to this headline">¶</a></h2>
 <section id="impulsion-unite">
-<h3>Impulsion unité<a class="headerlink" href="#impulsion-unite" title="Permalink to this heading">#</a></h3>
+<h3>Impulsion unité<a class="headerlink" href="#impulsion-unite" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Définition :</p></li>
 </ul>
@@ -413,7 +395,7 @@ la somme des éléments d’une suite géométrique de raison <span class="math 
 \[X(z) = 1\]</div>
 </section>
 <section id="echelon-unite">
-<h3>Echelon unité<a class="headerlink" href="#echelon-unite" title="Permalink to this heading">#</a></h3>
+<h3>Echelon unité<a class="headerlink" href="#echelon-unite" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Définition :</p></li>
 </ul>
@@ -429,7 +411,7 @@ la somme des éléments d’une suite géométrique de raison <span class="math 
 \[X(z) = \frac{z}{z-1}\]</div>
 </section>
 <section id="rampe-unite">
-<h3>Rampe unité<a class="headerlink" href="#rampe-unite" title="Permalink to this heading">#</a></h3>
+<h3>Rampe unité<a class="headerlink" href="#rampe-unite" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Définition :</p></li>
 </ul>
@@ -448,55 +430,50 @@ nT_e,&amp;n\ge 0\\
 </section>
 
 
-              </article>
+              </div>
               
-
               
-              <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-  <a class='left-prev' id="prev-link" href="index.html" title="previous page">
-      <i class="fas fa-angle-left"></i>
-      <div class="prev-next-info">
-          <p class="prev-next-subtitle">previous</p>
-          <p class="prev-next-title">Systèmes à temps discret</p>
-      </div>
-  </a>
-  <a class='right-next' id="next-link" href="analyse.html" title="next page">
-  <div class="prev-next-info">
-      <p class="prev-next-subtitle">next</p>
-      <p class="prev-next-title">Systèmes SLIT</p>
-  </div>
-  <i class="fas fa-angle-right"></i>
-  </a>
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Systèmes à temps discret</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="analyse.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Systèmes SLIT</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-              </footer>
               
-          </div>
+          </main>
           
+
       </div>
     </div>
-
   
-  
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
-
-<footer class="bd-footer"><div class="bd-footer__inner container">
-  
-  <div class="footer-item">
-    <p class="copyright">
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
     &copy; Copyright 2022, V. Choqueuse.<br>
 </p>
-  </div>
-  
-  <div class="footer-item">
-    <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.<br>
 </p>
+    </div>
+    
   </div>
-  
-</div>
 </footer>
   </body>
 </html>

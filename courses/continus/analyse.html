@@ -1,22 +1,16 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Systèmes SLIT &#8212; pydata_theme  documentation</title>
-<script>
-  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
-</script>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
-
-
+    
   <link rel="stylesheet"
     href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
@@ -24,59 +18,56 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/css/blank.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
-
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Systèmes de 1er ordre" href="first_order.html" />
     <link rel="prev" title="Transformée de Laplace" href="laplace.html" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="docsearch:language" content="en">
-  </head>
-  
-  
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
-    <div class="bd-header-announcement container-fluid" id="banner">
-      
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
 
-    </div>
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
 
     
-    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
 
   <div id="navbar-start">
     
     
-  
 
-
-<a class="navbar-brand logo" href="../../index.html">
-  
-  
-  
-  
-    <img src="../../_static/logo.png" class="logo__image only-light" alt="Logo image">
-    <img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image">
-  
-  
+<a class="navbar-brand" href="../../index.html">
+  <img src="../../_static/logo.png" class="logo" alt="logo">
 </a>
+
+
     
   </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="fas fa-bars"></span>
+    <span class="navbar-toggler-icon"></span>
   </button>
 
   
@@ -124,18 +115,12 @@
     <div id="navbar-end">
       
       <div class="navbar-end-item">
-        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
-    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
-    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
-    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
-</span>
-      </div>
-      
-      <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/vincentchoqueuse/cheatsheet_asservissement" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label></a>
+          <a class="nav-link" href="https://github.com/vincentchoqueuse/cheatsheet_asservissement" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
         </li>
       </ul>
       </div>
@@ -146,18 +131,17 @@
     </nav>
     
 
-    <div class="bd-container container-xl">
-      <div class="bd-container__inner row">
+    <div class="container-xl">
+      <div class="row">
           
-
-<!-- Only show if we have sidebars configured, else just a small margin  -->
-<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
-  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
-    <p aria-level="2" class="caption" role="heading">
+    <p>
  <span class="caption-text">
   Contents:
  </span>
@@ -256,21 +240,17 @@
 
   </div>
 </nav>
-  </div>
-  <div class="sidebar-end-items">
-  </div>
-</div>
-
-
+            </div>
+            
           
 
-
-<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
-  
-    
-    <div class="toc-item">
-      
-<div class="tocsection onthispage mt-5 pt-1 pb-3">
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
     <i class="fas fa-list"></i> On this page
 </div>
 
@@ -348,7 +328,7 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
+    <a class="reference internal nav-link" href="#expression-1">
      Expression
     </a>
    </li>
@@ -365,7 +345,7 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
+    <a class="reference internal nav-link" href="#expression-2">
      Expression
     </a>
    </li>
@@ -379,29 +359,31 @@
 </ul>
 
 </nav>
-    </div>
-    
-    <div class="toc-item">
-      
-    </div>
-    
-  
-</div>
-
-
-          
-          
-          <div class="bd-content col-12 col-md-9 col-xl-7">
+              </div>
               
-              <article class="bd-article" role="main">
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
                 
   <section id="systemes-slit">
-<h1>Systèmes SLIT<a class="headerlink" href="#systemes-slit" title="Permalink to this heading">#</a></h1>
+<h1>Systèmes SLIT<a class="headerlink" href="#systemes-slit" title="Permalink to this headline">¶</a></h1>
 <section id="equation-differentielle">
-<h2>Equation Différentielle<a class="headerlink" href="#equation-differentielle" title="Permalink to this heading">#</a></h2>
+<h2>Equation Différentielle<a class="headerlink" href="#equation-differentielle" title="Permalink to this headline">¶</a></h2>
 <p>Dans ce cours, nous nous intéressons spécifiquement à l’analyse des SLITs modélisables par une équation différentielle linéaire d’ordre <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <section id="expression">
-<h3>Expression<a class="headerlink" href="#expression" title="Permalink to this heading">#</a></h3>
+<h3>Expression<a class="headerlink" href="#expression" title="Permalink to this headline">¶</a></h3>
 <p>Lorsqu’un système est modélisable par une équation différentielle linéaire d’ordre <span class="math notranslate nohighlight">\(n\)</span>, le lien entre l’entrée <span class="math notranslate nohighlight">\(e(t)\)</span>
 et la sortie <span class="math notranslate nohighlight">\(s(t)\)</span> est donné par:</p>
 <div class="math notranslate nohighlight">
@@ -416,7 +398,7 @@ et la sortie <span class="math notranslate nohighlight">\(s(t)\)</span> est donn
 </ul>
 </section>
 <section id="produit-de-convolution">
-<h3>Produit de Convolution<a class="headerlink" href="#produit-de-convolution" title="Permalink to this heading">#</a></h3>
+<h3>Produit de Convolution<a class="headerlink" href="#produit-de-convolution" title="Permalink to this headline">¶</a></h3>
 <p>Un système SLIT peut être entièrement décrit par sa réponse à un signal de type impulsion. Lorsqu’un signal <span class="math notranslate nohighlight">\(e(t)\)</span>
 est appliquée à l’entrée du système et lorsque les conditions initiales sont nulles, la sortie <span class="math notranslate nohighlight">\(s(t)\)</span> s’obtient via un produit de convolution</p>
 <div class="math notranslate nohighlight">
@@ -427,25 +409,25 @@ est appliquée à l’entrée du système et lorsque les conditions initiales so
 </section>
 </section>
 <section id="fonction-de-transfert">
-<h2>Fonction de Transfert<a class="headerlink" href="#fonction-de-transfert" title="Permalink to this heading">#</a></h2>
+<h2>Fonction de Transfert<a class="headerlink" href="#fonction-de-transfert" title="Permalink to this headline">¶</a></h2>
 <p>Pour analyser un système SLIT, une approche très pratique consiste à utiliser la transformée de Laplace.
 Soit <span class="math notranslate nohighlight">\(E(p)\)</span> et <span class="math notranslate nohighlight">\(S(p)\)</span> les transformées de Laplace de l’entrée et de la sortie. Lorsque les conditions
 initiales sont nulles, la transformée de Laplace de la sortie est donnée par <span class="math notranslate nohighlight">\(S(p)=H(p)E(p)\)</span> où <span class="math notranslate nohighlight">\(H(p)=\mathcal{L}[h(t)]\)</span> désigne la transformée
 de Laplace de la réponse impulsionnelle du système et est appelée fonction de transfert.</p>
-<figure class="align-center" id="id3">
+<figure class="align-center" id="figure-1">
 <a class="reference internal image-reference" href="../../_images/representation.svg"><img alt="schema bloc" src="../../_images/representation.svg" width="250" /></a>
 <figcaption>
-<p><span class="caption-text">Schéma Bloc</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Schéma Bloc</span><a class="headerlink" href="#figure-1" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 <section id="forme-polynomiale">
-<h3>Forme Polynomiale<a class="headerlink" href="#forme-polynomiale" title="Permalink to this heading">#</a></h3>
+<h3>Forme Polynomiale<a class="headerlink" href="#forme-polynomiale" title="Permalink to this headline">¶</a></h3>
 <p>Pour un système modélisable par une équation différentielle linéaire d’ordre <span class="math notranslate nohighlight">\(n\)</span>, la fonction de transfert du système peut s’exprimer sous la forme polynomiale suivante</p>
 <div class="math notranslate nohighlight">
 \[H(p)=\frac{S(p)}{E(p)}=\frac{b_Np^N+\cdots+b_1p+b_0}{a_Np^N+\cdots+a_1p+a_0}\]</div>
 </section>
 <section id="forme-factorisee">
-<h3>Forme Factorisée<a class="headerlink" href="#forme-factorisee" title="Permalink to this heading">#</a></h3>
+<h3>Forme Factorisée<a class="headerlink" href="#forme-factorisee" title="Permalink to this headline">¶</a></h3>
 <p>Pour faciliter l’analyse d’une fonction de transfert, il est très courant de recourir à sa forme factorisée</p>
 <div class="math notranslate nohighlight">
 \[H(p)=k\frac{(p-z_N)\cdots (p-z_1)}{(p-p_N)\cdots (p-p_1)}\]</div>
@@ -455,7 +437,7 @@ de Laplace de la réponse impulsionnelle du système et est appelée fonction de
 </ul>
 </section>
 <section id="type-du-systeme">
-<h3>Type du système<a class="headerlink" href="#type-du-systeme" title="Permalink to this heading">#</a></h3>
+<h3>Type du système<a class="headerlink" href="#type-du-systeme" title="Permalink to this headline">¶</a></h3>
 <p>Le type de la fonction transfert <span class="math notranslate nohighlight">\(H(p)\)</span> est le plus petit entier naturel <span class="math notranslate nohighlight">\(\alpha\)</span> tel que <span class="math notranslate nohighlight">\(H(p)\)</span> puisse s’écrire sous la forme :</p>
 <div class="math notranslate nohighlight">
 \[H(p) = \frac{G(p)}{p^{\alpha}}\]</div>
@@ -465,7 +447,7 @@ de Laplace de la réponse impulsionnelle du système et est appelée fonction de
 </ul>
 </section>
 <section id="proprietes">
-<h3>Propriétés<a class="headerlink" href="#proprietes" title="Permalink to this heading">#</a></h3>
+<h3>Propriétés<a class="headerlink" href="#proprietes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Stabilité: Un SLIT continu est stable si tous les pôles possède une partie réelle négative c-a-d <span class="math notranslate nohighlight">\(\Re e(p_k)&lt;0\)</span>.</p></li>
 <li><p>Valeur Initiale :</p></li>
@@ -480,9 +462,9 @@ de Laplace de la réponse impulsionnelle du système et est appelée fonction de
 </section>
 </section>
 <section id="reponse-temporelle">
-<h2>Réponse Temporelle<a class="headerlink" href="#reponse-temporelle" title="Permalink to this heading">#</a></h2>
+<h2>Réponse Temporelle<a class="headerlink" href="#reponse-temporelle" title="Permalink to this headline">¶</a></h2>
 <section id="principe">
-<h3>Principe<a class="headerlink" href="#principe" title="Permalink to this heading">#</a></h3>
+<h3>Principe<a class="headerlink" href="#principe" title="Permalink to this headline">¶</a></h3>
 <p>Pour obtenir la réponse temporelle d’un système à une entrée <span class="math notranslate nohighlight">\(e(t)\)</span>, une solution possible consiste à passer par le domaine de Laplace.</p>
 <ol class="arabic simple">
 <li><p>Calcul de la transformée de Laplace de la sortie du système c-à-d <span class="math notranslate nohighlight">\(S(p) = H(p)E(p)\)</span> où <span class="math notranslate nohighlight">\(E(p)\)</span> correspond à la transformée de Laplace de l’entrée.</p></li>
@@ -491,7 +473,7 @@ de Laplace de la réponse impulsionnelle du système et est appelée fonction de
 </ol>
 </section>
 <section id="reponse-indicielle">
-<h3>Réponse Indicielle<a class="headerlink" href="#reponse-indicielle" title="Permalink to this heading">#</a></h3>
+<h3>Réponse Indicielle<a class="headerlink" href="#reponse-indicielle" title="Permalink to this headline">¶</a></h3>
 <p>La réponse indicielle à un échelon d’amplitude <span class="math notranslate nohighlight">\(E\)</span> correspond à la sortie du système <span class="math notranslate nohighlight">\(s(t)\)</span> lorsque :</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}e(t)= Eu(t)= \left\{\begin{array}{cc}
@@ -515,7 +497,7 @@ E,&amp;t\ge 0\\
 <p>où <span class="math notranslate nohighlight">\(\lim_{p\to 0}H(p)\)</span> désigne le gain statique. Lorsque le système est un système de type <span class="math notranslate nohighlight">\(\alpha=0\)</span>, le gain statique est simplement donné par <span class="math notranslate nohighlight">\(H(0)\)</span>.</p>
 </section>
 <section id="exemple">
-<h3>Exemple<a class="headerlink" href="#exemple" title="Permalink to this heading">#</a></h3>
+<h3>Exemple<a class="headerlink" href="#exemple" title="Permalink to this headline">¶</a></h3>
 <p>L’exemple suivant montre comment obtenir la réponse indicielle d’un système de premier ordre</p>
 <div class="math notranslate nohighlight">
 \[H(p)=\frac{K}{\tau p +1}\]</div>
@@ -537,9 +519,9 @@ E,&amp;t\ge 0\\
 </section>
 </section>
 <section id="reponse-frequentielle">
-<h2>Réponse Fréquentielle<a class="headerlink" href="#reponse-frequentielle" title="Permalink to this heading">#</a></h2>
-<section id="id1">
-<h3>Expression<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h2>Réponse Fréquentielle<a class="headerlink" href="#reponse-frequentielle" title="Permalink to this headline">¶</a></h2>
+<section id="expression-1">
+<h3>Expression<a class="headerlink" href="#expression-1" title="Permalink to this headline">¶</a></h3>
 <p>Il est possible de montrer que si <span class="math notranslate nohighlight">\(e(t)=e^{j\omega t}\)</span>, la sortie s’exprime sous la forme <span class="math notranslate nohighlight">\(s(t)=H(j\omega)e^{j\omega t}\)</span>. La grandeur complexe
 <span class="math notranslate nohighlight">\(H(j\omega)\)</span> est appelée réponse fréquentielle du système. Notons que la réponse fréquentielle s’obtient facilement
 à partir de la fonction de transfert en posant :</p>
@@ -547,7 +529,7 @@ E,&amp;t\ge 0\\
 \[p = j\omega\]</div>
 </section>
 <section id="representations">
-<h3>Représentations<a class="headerlink" href="#representations" title="Permalink to this heading">#</a></h3>
+<h3>Représentations<a class="headerlink" href="#representations" title="Permalink to this headline">¶</a></h3>
 <p>Pour analyser la réponse fréquentielle <span class="math notranslate nohighlight">\(H(j\omega)\)</span>, plusieurs représentations sont possibles :</p>
 <ul class="simple">
 <li><p>Diagramme de Bode: représentation du module <span class="math notranslate nohighlight">\(|H(j\omega)|\)</span> en fonction de <span class="math notranslate nohighlight">\(\omega\)</span>, et de l’argument <span class="math notranslate nohighlight">\(\arg[H(j\omega)]\)</span> en fonction de <span class="math notranslate nohighlight">\(\omega\)</span>.</p></li>
@@ -557,25 +539,25 @@ E,&amp;t\ge 0\\
 </section>
 </section>
 <section id="boucle-fermee">
-<h2>Boucle Fermée<a class="headerlink" href="#boucle-fermee" title="Permalink to this heading">#</a></h2>
+<h2>Boucle Fermée<a class="headerlink" href="#boucle-fermee" title="Permalink to this headline">¶</a></h2>
 <p>Pour améliorer les performances d’un système, une technique couramment utilisée consiste à utiliser le principe de la boucle fermée.
 Considérons un système composé d’une comparateur, une chaîne directe de fonction de transfert <span class="math notranslate nohighlight">\(A(p)\)</span> et une chaîne de retour de
 fonction de transfert <cite>B(p)</cite>.</p>
-<figure class="align-center" id="id4">
+<figure class="align-center" id="figure-2">
 <a class="reference internal image-reference" href="../../_images/closed_loop.svg"><img alt="Boucle Fermée" src="../../_images/closed_loop.svg" width="300" /></a>
 <figcaption>
-<p><span class="caption-text">Boucle Fermée</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Boucle Fermée</span><a class="headerlink" href="#figure-2" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
-<section id="id2">
-<h3>Expression<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<section id="expression-2">
+<h3>Expression<a class="headerlink" href="#expression-2" title="Permalink to this headline">¶</a></h3>
 <p>La fonction de transfert en boucle fermée (FTBF) s’exprime sous
 la forme</p>
 <div class="math notranslate nohighlight">
 \[H(p) =\frac{S(p)}{E(p)}= \frac{A(p)}{1+A(p)B(p)}\]</div>
 </section>
 <section id="demonstration">
-<h3>Démonstration<a class="headerlink" href="#demonstration" title="Permalink to this heading">#</a></h3>
+<h3>Démonstration<a class="headerlink" href="#demonstration" title="Permalink to this headline">¶</a></h3>
 <p>La sortie du comparateur s’exprime sous la forme</p>
 <div class="math notranslate nohighlight">
 \[\epsilon(p) = E(p) - B(p)S(p)\]</div>
@@ -591,55 +573,50 @@ du comparateur sous la forme</p>
 </section>
 
 
-              </article>
+              </div>
               
-
               
-              <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-  <a class='left-prev' id="prev-link" href="laplace.html" title="previous page">
-      <i class="fas fa-angle-left"></i>
-      <div class="prev-next-info">
-          <p class="prev-next-subtitle">previous</p>
-          <p class="prev-next-title">Transformée de Laplace</p>
-      </div>
-  </a>
-  <a class='right-next' id="next-link" href="first_order.html" title="next page">
-  <div class="prev-next-info">
-      <p class="prev-next-subtitle">next</p>
-      <p class="prev-next-title">Systèmes de 1er ordre</p>
-  </div>
-  <i class="fas fa-angle-right"></i>
-  </a>
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="laplace.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Transformée de Laplace</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="first_order.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Systèmes de 1er ordre</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-              </footer>
               
-          </div>
+          </main>
           
+
       </div>
     </div>
-
   
-  
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
-
-<footer class="bd-footer"><div class="bd-footer__inner container">
-  
-  <div class="footer-item">
-    <p class="copyright">
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
     &copy; Copyright 2022, V. Choqueuse.<br>
 </p>
-  </div>
-  
-  <div class="footer-item">
-    <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.<br>
 </p>
+    </div>
+    
   </div>
-  
-</div>
 </footer>
   </body>
 </html>
