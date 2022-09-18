@@ -1,16 +1,22 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
   <head>
-    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Systèmes SLIT &#8212; pydata_theme  documentation</title>
-    
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
 
-    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
   <link rel="stylesheet"
     href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
@@ -18,56 +24,59 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../../_static/css/blank.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
-    
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Systèmes Echantillonnés" href="systeme_echantillonne.html" />
     <link rel="prev" title="Transformée en Z" href="z.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
 
     
-    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
 
   <div id="navbar-start">
     
     
+  
 
-<a class="navbar-brand" href="../../index.html">
-  <img src="../../_static/logo.png" class="logo" alt="logo">
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
 </a>
-
-
     
   </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="fas fa-bars"></span>
   </button>
 
   
@@ -115,12 +124,18 @@
     <div id="navbar-end">
       
       <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/vincentchoqueuse/cheatsheet_asservissement" rel="noopener" target="_blank" title="GitHub">
-            <span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label>
-          </a>
+          <a class="nav-link" href="https://github.com/vincentchoqueuse/cheatsheet_asservissement" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
         </li>
       </ul>
       </div>
@@ -131,17 +146,18 @@
     </nav>
     
 
-    <div class="container-xl">
-      <div class="row">
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
           
-            
-            <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
-    <p>
+    <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Contents:
  </span>
@@ -240,17 +256,21 @@
 
   </div>
 </nav>
-            </div>
-            
-          
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
 
           
-          <div class="d-none d-xl-block col-xl-2 bd-toc">
-            
-              
-              <div class="toc-item">
-                
-<div class="tocsection onthispage pt-5 pb-3">
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
     <i class="fas fa-list"></i> On this page
 </div>
 
@@ -318,7 +338,7 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#expression-1">
+    <a class="reference internal nav-link" href="#id1">
      Expression
     </a>
    </li>
@@ -332,31 +352,29 @@
 </ul>
 
 </nav>
-              </div>
-              
-              <div class="toc-item">
-                
-              </div>
-              
-            
-          </div>
-          
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
+
 
           
           
-            
-          
-          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+          <div class="bd-content col-12 col-md-9 col-xl-7">
               
-              <div>
+              <article class="bd-article" role="main">
                 
   <section id="systemes-slit">
-<h1>Systèmes SLIT<a class="headerlink" href="#systemes-slit" title="Permalink to this headline">¶</a></h1>
+<h1>Systèmes SLIT<a class="headerlink" href="#systemes-slit" title="Permalink to this heading">#</a></h1>
 <section id="equation-de-recurrence">
-<h2>Equation de récurrence<a class="headerlink" href="#equation-de-recurrence" title="Permalink to this headline">¶</a></h2>
+<h2>Equation de récurrence<a class="headerlink" href="#equation-de-recurrence" title="Permalink to this heading">#</a></h2>
 <p>Dans ce cours, nous nous intéressons spécifiquement à l’analyse des SLITs modélisables par une équation de récurrence.</p>
 <section id="expression">
-<h3>Expression<a class="headerlink" href="#expression" title="Permalink to this headline">¶</a></h3>
+<h3>Expression<a class="headerlink" href="#expression" title="Permalink to this heading">#</a></h3>
 <p>Lorsqu’un système est modélisable par une équation de récurrence, le lien entre l’entrée <span class="math notranslate nohighlight">\(e[n]\)</span> et la sortie <span class="math notranslate nohighlight">\(s[n]\)</span> est donné par :</p>
 <div class="math notranslate nohighlight">
 \[a_L s[n+L] + \cdots + a_0 s[n] = b_K e[n+K] + \cdots + b_0 e[n]\]</div>
@@ -368,23 +386,23 @@ sous la forme</p>
 </section>
 </section>
 <section id="fonction-de-transfert">
-<h2>Fonction de transfert<a class="headerlink" href="#fonction-de-transfert" title="Permalink to this headline">¶</a></h2>
+<h2>Fonction de transfert<a class="headerlink" href="#fonction-de-transfert" title="Permalink to this heading">#</a></h2>
 <p>Lorsque les conditions initiales sont nulles, la transformée en Z de la sortie s’exprime sous la forme
 <span class="math notranslate nohighlight">\(S(z)=H(z)E(z)\)</span> où <span class="math notranslate nohighlight">\(H(z)\)</span> correspond à la fonction de transfert en Z du système.</p>
-<figure class="align-center" id="figure-1">
+<figure class="align-center" id="id2">
 <a class="reference internal image-reference" href="../../_images/representation_d.svg"><img alt="schema bloc" src="../../_images/representation_d.svg" width="250" /></a>
 <figcaption>
-<p><span class="caption-text">Schéma Bloc</span><a class="headerlink" href="#figure-1" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Schéma Bloc</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="forme-polynomiale">
-<h3>Forme polynomiale<a class="headerlink" href="#forme-polynomiale" title="Permalink to this headline">¶</a></h3>
+<h3>Forme polynomiale<a class="headerlink" href="#forme-polynomiale" title="Permalink to this heading">#</a></h3>
 <p>Pour un système régit par une équation de récurrence, la fonction de transfert du système est donnée par :</p>
 <div class="math notranslate nohighlight">
 \[H(z)=\frac{S(z)}{E(z)}=\frac{b_K z^{K} + \cdots + b_1 z + b_0}{a_L z^{L}+ \cdots + a_1z+ a_0}\]</div>
 </section>
 <section id="forme-factorisee">
-<h3>Forme Factorisée<a class="headerlink" href="#forme-factorisee" title="Permalink to this headline">¶</a></h3>
+<h3>Forme Factorisée<a class="headerlink" href="#forme-factorisee" title="Permalink to this heading">#</a></h3>
 <p>Pour mettre en évidence les points singuliers de la fonction de transfert, il est possible de réexprimer la fonction de transfert sous une forme factorisée.</p>
 <div class="math notranslate nohighlight">
 \[H(z)=G\frac{(z-z_1)(z-z_2)\cdots(z-z_K)}{(z-p_1)(z-p_2)\cdots(z-p_L)}\]</div>
@@ -395,7 +413,7 @@ sous la forme</p>
 </ul>
 </section>
 <section id="proprietes">
-<h3>Propriétés<a class="headerlink" href="#proprietes" title="Permalink to this headline">¶</a></h3>
+<h3>Propriétés<a class="headerlink" href="#proprietes" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Stabilité: Pour qu’un système à temps discret soit stable, il faut que tous les pôles de sa fonction de transfert sont inclus dans le cercle de rayon unité c-a-d si <span class="math notranslate nohighlight">\(|p_l|\le 1`\)</span></p></li>
 <li><p>Valeur Initiale :</p></li>
@@ -410,10 +428,10 @@ sous la forme</p>
 </section>
 </section>
 <section id="reponse-temporelle">
-<h2>Réponse Temporelle<a class="headerlink" href="#reponse-temporelle" title="Permalink to this headline">¶</a></h2>
+<h2>Réponse Temporelle<a class="headerlink" href="#reponse-temporelle" title="Permalink to this heading">#</a></h2>
 <p>Pour obtenir la réponse temporelle d’un système à une entrée <span class="math notranslate nohighlight">\(e[n]\)</span>, deux solutions sont possibles.</p>
 <section id="technique-1-decomposition-en-elements-simples">
-<h3>Technique 1 (Décomposition en éléments simples)<a class="headerlink" href="#technique-1-decomposition-en-elements-simples" title="Permalink to this headline">¶</a></h3>
+<h3>Technique 1 (Décomposition en éléments simples)<a class="headerlink" href="#technique-1-decomposition-en-elements-simples" title="Permalink to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Calcul de la transformée en Z de la sortie du système c-à-d <span class="math notranslate nohighlight">\(S(z) = H(z)E(z)\)</span> où <span class="math notranslate nohighlight">\(E(z)\)</span> correspond à la transformée en Z de l’entrée.</p></li>
 <li><p>Décomposition en éléments simples de la sortie <span class="math notranslate nohighlight">\(S(z)/z\)</span>, puis de <span class="math notranslate nohighlight">\(S(z)\)</span>.</p></li>
@@ -421,14 +439,14 @@ sous la forme</p>
 </ol>
 </section>
 <section id="technique-2-equation-de-recurrence">
-<h3>Technique 2 (Equation de récurrence)<a class="headerlink" href="#technique-2-equation-de-recurrence" title="Permalink to this headline">¶</a></h3>
+<h3>Technique 2 (Equation de récurrence)<a class="headerlink" href="#technique-2-equation-de-recurrence" title="Permalink to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Obtention de l’équation de récurrence donnant <span class="math notranslate nohighlight">\(s[n]\)</span> en fonction de <span class="math notranslate nohighlight">\(s[l]~(l&lt;n)\)</span> et <span class="math notranslate nohighlight">\(e[k]~(k\le n)\)</span></p></li>
 <li><p>Evaluation de la sortie <span class="math notranslate nohighlight">\(s[n]\)</span> en remplaçant les <span class="math notranslate nohighlight">\(e[k]\)</span> par leur valeur numérique.</p></li>
 </ol>
 </section>
 <section id="exemple">
-<h3>Exemple<a class="headerlink" href="#exemple" title="Permalink to this headline">¶</a></h3>
+<h3>Exemple<a class="headerlink" href="#exemple" title="Permalink to this heading">#</a></h3>
 <p>Considérons un système de premier ordre défini par la fonction de transfert</p>
 <div class="math notranslate nohighlight">
 \[H(z) = \frac{S(z)}{E(z)} = \frac{1}{z-0.5}\]</div>
@@ -480,9 +498,9 @@ s[3] &amp;= u[2] + 0.5s[2] = 1.75\end{split}\]</div>
 </section>
 </section>
 <section id="reponse-frequentielle">
-<h2>Réponse Fréquentielle<a class="headerlink" href="#reponse-frequentielle" title="Permalink to this headline">¶</a></h2>
-<section id="expression-1">
-<h3>Expression<a class="headerlink" href="#expression-1" title="Permalink to this headline">¶</a></h3>
+<h2>Réponse Fréquentielle<a class="headerlink" href="#reponse-frequentielle" title="Permalink to this heading">#</a></h2>
+<section id="id1">
+<h3>Expression<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <p>Il est possible de montrer que si <span class="math notranslate nohighlight">\(e[n]=e^{j\omega nT_e}\)</span>, la sortie s’exprime sous la forme <span class="math notranslate nohighlight">\(s[n]=H\left(e^{j\omega T_e}\right)e^{j\omega nT_e}\)</span> où
 <span class="math notranslate nohighlight">\(H\left(e^{j\omega T_e}\right)\)</span> désigne la réponse fréquentielle du système.
 Notons que la réponse fréquentielle peut s’obtenir directement à partir de la fonction de transfert en posant :</p>
@@ -492,7 +510,7 @@ Notons que la réponse fréquentielle peut s’obtenir directement à partir de 
 où <span class="math notranslate nohighlight">\(\omega_e=2\pi F_e\)</span> désigne la pulsation d’échantillonnage.</p>
 </section>
 <section id="representation">
-<h3>Représentation<a class="headerlink" href="#representation" title="Permalink to this headline">¶</a></h3>
+<h3>Représentation<a class="headerlink" href="#representation" title="Permalink to this heading">#</a></h3>
 <p>Comme la réponse fréquentielle est généralement complexe, nous représentons le plus souvent :</p>
 <ul class="simple">
 <li><p>son module <span class="math notranslate nohighlight">\(|H\left(e^{j\omega T_e}\right)|\)</span>,</p></li>
@@ -503,50 +521,55 @@ où <span class="math notranslate nohighlight">\(\omega_e=2\pi F_e\)</span> dés
 </section>
 
 
-              </div>
+              </article>
               
-              
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="z.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Transformée en Z</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="systeme_echantillonne.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Systèmes Echantillonnés</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-              
-          </main>
-          
 
+              
+              <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="z.html" title="previous page">
+      <i class="fas fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Transformée en Z</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="systeme_echantillonne.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Systèmes Echantillonnés</p>
+  </div>
+  <i class="fas fa-angle-right"></i>
+  </a>
+</div>
+              </footer>
+              
+          </div>
+          
       </div>
     </div>
+
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
-<footer class="footer mt-5 mt-md-0">
-  <div class="container">
-    
-    <div class="footer-item">
-      <p class="copyright">
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
     &copy; Copyright 2022, V. Choqueuse.<br>
 </p>
-    </div>
-    
-    <div class="footer-item">
-      <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.<br>
-</p>
-    </div>
-    
   </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
+</p>
+  </div>
+  
+</div>
 </footer>
   </body>
 </html>
