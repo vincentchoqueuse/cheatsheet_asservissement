@@ -5,7 +5,7 @@ Objectif
 --------
 
 Dans ce tutorial, nous montrons comment obtenir l'équation de récurrence d'un système à temps discret décrit par une fonction de transfert :math:`F(z)`.
-Pour illustrer ce tutorial, nous allons considérer la fonction de transfert 
+Pour illustrer ce tutorial, nous allons considérer la fonction de transfert suivante :
 
 .. math ::
 
