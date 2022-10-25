@@ -55,7 +55,7 @@ html_css_files = [
     'css/custom.css',
 ]
 
-html_logo = "_static/logo.png"
+html_logo = "_static/logo.svg"
 
 plot_html_show_source_link = False
 plot_html_show_formats = False
