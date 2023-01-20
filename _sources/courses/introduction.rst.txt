@@ -15,10 +15,10 @@ Un système SISO peut être représenté un bloc prenant une entrée et renvoyan
   Modélisation Schéma Bloc
 
 En asservissement, notre objectif est de venir élaborer, synthétiser un signal de commande analogique ou numérique du processus que nous souhaitons contrôler.
-Pour atteindre cet objectif, nous proposons de :
+Pour atteindre cet objectif, nous proposons :
 
-* mesurer la sortie du système au moyen d'un capteur,
-* mesurer la différence entre la consigne et la sortie du capteur au moyen d'un comparateur,
+* de mesurer la sortie du système au moyen d'un capteur,
+* de mesurer la différence entre la consigne et la sortie du capteur au moyen d'un comparateur,
 * d'élaborer un signal de commande à partir de la sortie du comparateur.
 
 Cette structure correspond à un système bouclé puisque la sortie est combinée avec l'entrée via le comparateur.
