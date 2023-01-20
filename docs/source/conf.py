@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'pydata_theme'
+project = 'Asservissement'
 copyright = '2022, V. Choqueuse'
 author = 'V. Choqueuse'
 
