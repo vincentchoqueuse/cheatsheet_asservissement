@@ -2,15 +2,48 @@ h1, h2, h3, h4, h5{
     color: rgb(51, 51, 51);
 }
 
-
 table.align-center {
     margin-left: auto;
     margin-right: auto;
 }
-
 
 .navbar-brand img {
     max-width: 100%;
     height: 75%;
     width: auto;
     }
+
+nav.bd-links ul {
+    list-style: none;
+    padding: 0 0 0 0 !important;
+    }
+        
+.bd-header.navbar-light#navbar-main {
+    background: var(--pst-color-on-background) !important;
+    border-bottom: 1px solid var(--pst-color-border) !important;
+    box-shadow: none;
+}
+
+.bd-header.navbar-light#navbar-main .navbar-nav>.active>.nav-link {
+    font-weight: 400; 
+    }
+
+.prev-next-area a p.prev-next-title {
+    font-weight: 400; 
+    }
+
+nav.bd-links .active:hover>a, nav.bd-links .active>a {
+    font-weight: 400;
+    }
+
+.toc-entry>.nav-link.active {
+    font-weight: 400;
+    }
+
+pre{
+    box-shadow: none;
+}
+
+.toctree-wrapper p.caption {
+    margin-bottom: 20px !important;
+}
