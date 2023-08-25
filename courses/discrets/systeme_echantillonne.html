@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Systèmes Echantillonnés &#8212; Asservissement  documentation</title>
 <script>
@@ -24,16 +23,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=cbc8eb3a" />
 
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -325,15 +324,15 @@
               <article class="bd-article" role="main">
                 
   <section id="systemes-echantillonnes">
-<h1>Systèmes Echantillonnés<a class="headerlink" href="#systemes-echantillonnes" title="Permalink to this heading">#</a></h1>
+<h1>Systèmes Echantillonnés<a class="headerlink" href="#systemes-echantillonnes" title="Link to this heading">#</a></h1>
 <section id="contexte">
-<h2>Contexte<a class="headerlink" href="#contexte" title="Permalink to this heading">#</a></h2>
+<h2>Contexte<a class="headerlink" href="#contexte" title="Link to this heading">#</a></h2>
 <p>Dans ce chapitre, nous montrons comment utiliser la transformée en Z pour analyser un système composé de CNA, d’un système continu et d’un CAN. Pour
 modéliser l’effet du CNA, nous introduisons le bloqueur d’ordre 0. Nous montrons ensuite qu’il est possible d’obtenir facilement la fonction de transfert en Z du système
 composé d’un CNA avec bloqueur d’ordre 0, d’un système analogique de fonction de transfert <span class="math notranslate nohighlight">\(F(p)\)</span> et d’un CAN.</p>
 </section>
 <section id="modelisation-cna-can-avec-boz">
-<h2>Modélisation CNA/CAN avec BOZ<a class="headerlink" href="#modelisation-cna-can-avec-boz" title="Permalink to this heading">#</a></h2>
+<h2>Modélisation CNA/CAN avec BOZ<a class="headerlink" href="#modelisation-cna-can-avec-boz" title="Link to this heading">#</a></h2>
 <p>Même si la correction se fait en numérique, en pratique, le système à contrôler reste
 le plus souvent analogique. Pour pouvoir mettre en place une stratégie de correction, il
 est alors nécessaire de modéliser l’influence des convertisseurs A/N et N/A.</p>
@@ -346,11 +345,11 @@ est alors nécessaire de modéliser l’influence des convertisseurs A/N et N/A.
 <figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="../../_images/boz.svg"><img alt="schema bloc" src="../../_images/boz.svg" width="350" /></a>
 <figcaption>
-<p><span class="caption-text">CNA avec BOZ</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">CNA avec BOZ</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="bloqueur-d-ordre-0">
-<h3>Bloqueur d’ordre 0<a class="headerlink" href="#bloqueur-d-ordre-0" title="Permalink to this heading">#</a></h3>
+<h3>Bloqueur d’ordre 0<a class="headerlink" href="#bloqueur-d-ordre-0" title="Link to this heading">#</a></h3>
 <p>Le bloqueur d’ordre 0 permet d’obtenir un signal analogique à partir d’un signal numérique. Spécifiquement,
 le bloqueur d’ordre 0 “bloque” la valeur du signal entre deux instants d’échantillonnage.</p>
 <figure class="align-default">
@@ -365,7 +364,7 @@ le bloqueur d’ordre 0 “bloque” la valeur du signal entre deux instants d�
 \[B_0(p) = \mathcal{L}[h(t)]=\frac{1}{p}-\frac{e^{-pT_e}}{p}=\frac{1-e^{-pT_e}}{p}\]</div>
 </section>
 <section id="fonction-de-transfert">
-<h3>Fonction de transfert<a class="headerlink" href="#fonction-de-transfert" title="Permalink to this heading">#</a></h3>
+<h3>Fonction de transfert<a class="headerlink" href="#fonction-de-transfert" title="Link to this heading">#</a></h3>
 <p>La chaîne composée du CNA avec BOZ, du système continu et du CAN peut être modélisée par la fonction de transfert en Z suivante</p>
 <div class="math notranslate nohighlight">
 \[F(z)=\frac{z-1}{z}TZ\left[TL^{-1}\left[\frac{F(p)}{p}\right]\right]\]</div>
@@ -382,7 +381,7 @@ le bloqueur d’ordre 0 “bloque” la valeur du signal entre deux instants d�
     &amp;=\frac{z-1}{z}TZ\left[\frac{F(p)}{p}\right]\end{split}\]</div>
 </section>
 <section id="proprietes">
-<h3>Propriétés<a class="headerlink" href="#proprietes" title="Permalink to this heading">#</a></h3>
+<h3>Propriétés<a class="headerlink" href="#proprietes" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Les gains statiques de <span class="math notranslate nohighlight">\(F(z)\)</span> et de <span class="math notranslate nohighlight">\(F(p)\)</span> sont identiques.</p></li>
 <li><p>Les pôles de la fonction de transfert <span class="math notranslate nohighlight">\(F(z)\)</span> sont liés aux pôles de <span class="math notranslate nohighlight">\(F(p)\)</span> par la relation</p></li>
@@ -391,7 +390,7 @@ le bloqueur d’ordre 0 “bloque” la valeur du signal entre deux instants d�
 \[z_k = e^{p_kT_e}\]</div>
 </section>
 <section id="exemple">
-<h3>Exemple<a class="headerlink" href="#exemple" title="Permalink to this heading">#</a></h3>
+<h3>Exemple<a class="headerlink" href="#exemple" title="Link to this heading">#</a></h3>
 <p>Considérons un système continu de premier ordre de fonction de transfert</p>
 <div class="math notranslate nohighlight">
 \[F(p)=\frac{K}{1+\tau p}\]</div>
@@ -450,7 +449,7 @@ le bloqueur d’ordre 0 “bloque” la valeur du signal entre deux instants d�
   
   <div class="footer-item">
     <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.2.3.<br>
 </p>
   </div>
   

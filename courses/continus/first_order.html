@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Systèmes de 1er ordre &#8212; Asservissement  documentation</title>
 <script>
@@ -24,16 +23,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=cbc8eb3a" />
 
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -354,11 +353,11 @@
               <article class="bd-article" role="main">
                 
   <section id="systemes-de-1er-ordre">
-<h1>Systèmes de 1er ordre<a class="headerlink" href="#systemes-de-1er-ordre" title="Permalink to this heading">#</a></h1>
+<h1>Systèmes de 1er ordre<a class="headerlink" href="#systemes-de-1er-ordre" title="Link to this heading">#</a></h1>
 <section id="modelisation">
-<h2>Modélisation<a class="headerlink" href="#modelisation" title="Permalink to this heading">#</a></h2>
+<h2>Modélisation<a class="headerlink" href="#modelisation" title="Link to this heading">#</a></h2>
 <section id="equation-differentielle">
-<h3>Equation Différentielle<a class="headerlink" href="#equation-differentielle" title="Permalink to this heading">#</a></h3>
+<h3>Equation Différentielle<a class="headerlink" href="#equation-differentielle" title="Link to this heading">#</a></h3>
 <p>Un système LTI peut être décrit par une équation différentielle de liant l’entrée <span class="math notranslate nohighlight">\(e(t)\)</span> et la sortie <span class="math notranslate nohighlight">\(s(t)\)</span>.
 Pour les systèmes passe-bas d’ordre 1, cette équation différentielle est donnée par:</p>
 <div class="math notranslate nohighlight">
@@ -369,7 +368,7 @@ Pour les systèmes passe-bas d’ordre 1, cette équation différentielle est do
 </ul>
 </section>
 <section id="fonction-de-transfert">
-<h3>Fonction de Transfert<a class="headerlink" href="#fonction-de-transfert" title="Permalink to this heading">#</a></h3>
+<h3>Fonction de Transfert<a class="headerlink" href="#fonction-de-transfert" title="Link to this heading">#</a></h3>
 <p>Pour faciliter l’analyse des systèmes LTI, il est courant de recourir à la notion de fonction de transfert. En utilisant les propriétés
 de la transformée de Laplace, il est possible d’établir que la fonction de transfert d’un système LP d’ordre 1 est donnée par:</p>
 <div class="math notranslate nohighlight">
@@ -382,7 +381,7 @@ de la transformée de Laplace, il est possible d’établir que la fonction de t
 </section>
 </section>
 <section id="reponse-indicielle">
-<h2>Réponse indicielle<a class="headerlink" href="#reponse-indicielle" title="Permalink to this heading">#</a></h2>
+<h2>Réponse indicielle<a class="headerlink" href="#reponse-indicielle" title="Link to this heading">#</a></h2>
 <p>La réponse indicielle correspond à la réponse du système lorsque l’entrée est un échelon c-à-d</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}e(t)=Eu(t)=\left\{\begin{array}{cl} E &amp;\text{ si }t\ge 0\\
@@ -392,14 +391,14 @@ de la transformée de Laplace, il est possible d’établir que la fonction de t
 <div class="math notranslate nohighlight">
 \[s(t)=KE\left(1-e^{-\frac{1}{\tau}t}\right)u(t)\]</div>
 <section id="exemple">
-<h3>Exemple<a class="headerlink" href="#exemple" title="Permalink to this heading">#</a></h3>
+<h3>Exemple<a class="headerlink" href="#exemple" title="Link to this heading">#</a></h3>
 <p>La figure suivante présente l’allure de la réponse indicielle à un échelon d’amplitude :math:E. Cette réponse suit une exponentielle croissante et se stabilise vers une valeur finie.</p>
 <figure class="align-default">
 <img alt="../../_images/first_order-1.png" class="plot-directive" src="../../_images/first_order-1.png" />
 </figure>
 </section>
 <section id="proprietes">
-<h3>Propriétés<a class="headerlink" href="#proprietes" title="Permalink to this heading">#</a></h3>
+<h3>Propriétés<a class="headerlink" href="#proprietes" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Valeur initiale : <span class="math notranslate nohighlight">\(s(0)=0\)</span>,</p></li>
 <li><p>Valeur finale : <span class="math notranslate nohighlight">\(s(\infty)=KE\)</span>,</p></li>
@@ -408,7 +407,7 @@ de la transformée de Laplace, il est possible d’établir que la fonction de t
 </ul>
 </section>
 <section id="identification">
-<h3>Identification<a class="headerlink" href="#identification" title="Permalink to this heading">#</a></h3>
+<h3>Identification<a class="headerlink" href="#identification" title="Link to this heading">#</a></h3>
 <p>L’identification graphique des paramètres peut s’obtenir de la manière suivante:</p>
 <ul class="simple">
 <li><p>Gain statique: le gain statique s’obtient à partir de la valeur finale via la relation <span class="math notranslate nohighlight">\(K = s(\infty)/E\)</span>.</p></li>
@@ -417,14 +416,14 @@ de la transformée de Laplace, il est possible d’établir que la fonction de t
 </section>
 </section>
 <section id="reponse-frequentielle">
-<h2>Réponse Fréquentielle<a class="headerlink" href="#reponse-frequentielle" title="Permalink to this heading">#</a></h2>
+<h2>Réponse Fréquentielle<a class="headerlink" href="#reponse-frequentielle" title="Link to this heading">#</a></h2>
 <p>La réponse fréquentielle s’obtient en posant <span class="math notranslate nohighlight">\(p=j\omega\)</span> où <span class="math notranslate nohighlight">\(\omega\)</span> désigne la pulsation (en rad/s). La réponse fréquentielle d’un système LP de premier ordre est donnée par :</p>
 <div class="math notranslate nohighlight">
 \[H(j\omega)=\frac{K}{1+j\omega \tau}\]</div>
 <p>La réponse fréquentielle est une fonction <span class="math notranslate nohighlight">\(\mathbb{R} \to \mathbb{C}\)</span>. Pour représenter cette réponse, il est courant
 de recourir à la représentation du module et de l’argument en fonction de <span class="math notranslate nohighlight">\(\omega\)</span>.</p>
 <section id="module">
-<h3>Module<a class="headerlink" href="#module" title="Permalink to this heading">#</a></h3>
+<h3>Module<a class="headerlink" href="#module" title="Link to this heading">#</a></h3>
 <figure class="align-default">
 <img alt="../../_images/first_order-2.png" class="plot-directive" src="../../_images/first_order-2.png" />
 </figure>
@@ -439,7 +438,7 @@ de recourir à la représentation du module et de l’argument en fonction de <s
 </ul>
 </section>
 <section id="argument">
-<h3>Argument<a class="headerlink" href="#argument" title="Permalink to this heading">#</a></h3>
+<h3>Argument<a class="headerlink" href="#argument" title="Link to this heading">#</a></h3>
 <figure class="align-default">
 <img alt="../../_images/first_order-3.png" class="plot-directive" src="../../_images/first_order-3.png" />
 </figure>
@@ -454,7 +453,7 @@ de recourir à la représentation du module et de l’argument en fonction de <s
 </ul>
 </section>
 <section id="id1">
-<h3>Identification<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3>Identification<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>L’identification graphique des paramètres s’obtient de la manière suivante:</p>
 <ul class="simple">
 <li><p>Gain statique: le gain statique correspond à la valeur du module en basse-fréquence. Si le module est affiché en dB, la valeur du module s’obtient via l’expression <span class="math notranslate nohighlight">\(K = 10^{G_0/20}\)</span>. Attention à bien vérifier que la phase évolue de <span class="math notranslate nohighlight">\(0\)</span> à <span class="math notranslate nohighlight">\(-90^o\)</span>. Si ca n’est pas le cas, le gain est négatif.</p></li>
@@ -509,7 +508,7 @@ de recourir à la représentation du module et de l’argument en fonction de <s
   
   <div class="footer-item">
     <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.2.3.<br>
 </p>
   </div>
   

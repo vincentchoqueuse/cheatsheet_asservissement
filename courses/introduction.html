@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Introduction &#8212; Asservissement  documentation</title>
 <script>
@@ -24,16 +23,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=cbc8eb3a" />
 
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -330,15 +329,15 @@
               <article class="bd-article" role="main">
                 
   <section id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h1>
+<h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
 <section id="objectif">
-<h2>Objectif<a class="headerlink" href="#objectif" title="Permalink to this heading">#</a></h2>
+<h2>Objectif<a class="headerlink" href="#objectif" title="Link to this heading">#</a></h2>
 <p>Dans ce cours, nous allons nous focaliser sur le contrôle et la commande des systèmes à une entrée / une sortie (SISO: Single Input Single Output).
 Un système SISO peut être représenté un bloc prenant une entrée et renvoyant une sortie.</p>
 <figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="../_images/representation3.svg"><img alt="Modélisation Schéma Bloc" src="../_images/representation3.svg" width="250" /></a>
 <figcaption>
-<p><span class="caption-text">Modélisation Schéma Bloc</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Modélisation Schéma Bloc</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>En asservissement, notre objectif est de venir élaborer, synthétiser un signal de commande analogique ou numérique du processus que nous souhaitons contrôler.
@@ -352,7 +351,7 @@ Pour atteindre cet objectif, nous proposons :</p>
 <figure class="align-center" id="id2">
 <a class="reference internal image-reference" href="../_images/representation4.svg"><img alt="Modélisation Schéma Bloc" src="../_images/representation4.svg" width="450" /></a>
 <figcaption>
-<p><span class="caption-text">Chaîne bouclée à retour non unitaire</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Chaîne bouclée à retour non unitaire</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Pour faciliter l’analyse des systèmes bouclés, nous travaillerons le plus souvent avec des systèmes bouclés à retour unitaire. En notant <span class="math notranslate nohighlight">\(e(t)\)</span> et <span class="math notranslate nohighlight">\(s(t)\)</span> le
@@ -360,12 +359,12 @@ signal de consigne et le signal en sortie de capteur, nous obtenons alors le sch
 <figure class="align-center" id="id3">
 <a class="reference internal image-reference" href="../_images/representation5.svg"><img alt="Modélisation Schéma Bloc" src="../_images/representation5.svg" width="550" /></a>
 <figcaption>
-<p><span class="caption-text">Chaîne bouclée à retour unitaire</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Chaîne bouclée à retour unitaire</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="criteres-de-performance">
-<h2>Critères de Performance<a class="headerlink" href="#criteres-de-performance" title="Permalink to this heading">#</a></h2>
+<h2>Critères de Performance<a class="headerlink" href="#criteres-de-performance" title="Link to this heading">#</a></h2>
 <p>Pour élaborer un signal de commande, nous allons prendre en compte plusieurs contraintes portant sur l’allure du signal de sortie
 <span class="math notranslate nohighlight">\(s(t)\)</span>. A titre d’illustration, la courbe suivante présente l’allure de la réponse d’un système à une entrée de type échelon (réponse indicielle). A
 partir de cette réponse, nous pouvons évaluer plusieurs critères permettant de critiquer les performances de l’asservissement.</p>
@@ -373,7 +372,7 @@ partir de cette réponse, nous pouvons évaluer plusieurs critères permettant d
 <img alt="../_images/introduction-1.png" class="plot-directive" src="../_images/introduction-1.png" />
 </figure>
 <section id="stabilite">
-<h3>Stabilité<a class="headerlink" href="#stabilite" title="Permalink to this heading">#</a></h3>
+<h3>Stabilité<a class="headerlink" href="#stabilite" title="Link to this heading">#</a></h3>
 <p>La première chose à évaluer est la stabilité du système. Un système est dit stable, au sens BIBO (Bounded Input Bounded Output),
 si et seulement si pour tout <span class="math notranslate nohighlight">\(t\)</span></p>
 <div class="math notranslate nohighlight">
@@ -381,7 +380,7 @@ si et seulement si pour tout <span class="math notranslate nohighlight">\(t\)</s
 <p>En d’autres termes, une entrée bornée doit conduire à une sortie bornée.</p>
 </section>
 <section id="precision">
-<h3>Précision<a class="headerlink" href="#precision" title="Permalink to this heading">#</a></h3>
+<h3>Précision<a class="headerlink" href="#precision" title="Link to this heading">#</a></h3>
 <p>Une autre caractéristique importante d’un asservissement est sa précision. Pour mesurer la précision, un critère possible consiste à mesurer l’écart statique entre l’entrée et la sortie c-à-d <span class="math notranslate nohighlight">\(\epsilon = e(\infty)-s(\infty)\)</span>. En pratique,
 nous préférons utiliser l’écart statique relatif qui est une mesure généralement indépendante de l’amplitude de l’entrée.</p>
 <p>L’écart statique relatif est défini par :</p>
@@ -390,7 +389,7 @@ nous préférons utiliser l’écart statique relatif qui est une mesure génér
 <p>Pour un système précis, l’écart statique relatif doit être nul.</p>
 </section>
 <section id="rapidite">
-<h3>Rapidité<a class="headerlink" href="#rapidite" title="Permalink to this heading">#</a></h3>
+<h3>Rapidité<a class="headerlink" href="#rapidite" title="Link to this heading">#</a></h3>
 <p>En plus du comportement statique, il est souvent important de critiquer le comportement dynamique du système. Pour critiquer
 le comportement dynamique, il est courant d’analyser la rapidité du système via sa réponse indicielle. Pour mesurer la rapidité, un critère possible
 est le temps de réponse à <span class="math notranslate nohighlight">\(\pm 5\%\)</span>.</p>
@@ -401,7 +400,7 @@ est le temps de réponse à <span class="math notranslate nohighlight">\(\pm 5\%
 <span class="math notranslate nohighlight">\(-5\%\)</span> et <span class="math notranslate nohighlight">\(+5\%\)</span> de la valeur finale. Plus un système est rapide, plus son temps de réponse est faible.</p>
 </section>
 <section id="depassement">
-<h3>Dépassement<a class="headerlink" href="#depassement" title="Permalink to this heading">#</a></h3>
+<h3>Dépassement<a class="headerlink" href="#depassement" title="Link to this heading">#</a></h3>
 <p>Une autre caractéristique importante concerne la présence ou nom d’oscillation au niveau de la réponse indicielle.
 Pour quantifier les oscillations, une critère possible consiste à mesurer le premier dépassement <span class="math notranslate nohighlight">\(D = \max[s(t)]-s(\infty)\)</span>. Le plus souvent, nous préférons utiliser la valeur du premier dépassement
 relatif qui est une mesure généralement indépendante de la valeur finale.</p>
@@ -410,7 +409,7 @@ relatif qui est une mesure généralement indépendante de la valeur finale.</p>
 \[D_r(\%)=100 \times \frac{\max[s(t)]-s(\infty)}{s(\infty)}\]</div>
 </section>
 <section id="robustesse">
-<h3>Robustesse<a class="headerlink" href="#robustesse" title="Permalink to this heading">#</a></h3>
+<h3>Robustesse<a class="headerlink" href="#robustesse" title="Link to this heading">#</a></h3>
 <p>Le plus souvent, l’analyse d’un système est réalisé sous l’hypothèse que nous connaissons exactement les comportements des différents
 blocs. Le plus souvent, ces comportements sont modélisés par des équations différentielles ou par des équations aux différences.
 Cette modélisation est, dans le meilleur des cas, une approximation de la réalité. Dans ce contexte, il est important d’évaluer la robustesse des stratégies de
@@ -420,7 +419,7 @@ comportement du système. Ces perturbations peuvent être déterministes ou alé
 <figure class="align-center" id="id4">
 <a class="reference internal image-reference" href="../_images/representation6.svg"><img alt="Modélisation Schéma Bloc" src="../_images/representation6.svg" width="650" /></a>
 <figcaption>
-<p><span class="caption-text">Influence des perturbations</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Influence des perturbations</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -472,7 +471,7 @@ comportement du système. Ces perturbations peuvent être déterministes ou alé
   
   <div class="footer-item">
     <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.2.3.<br>
 </p>
   </div>
   

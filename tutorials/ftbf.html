@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Fonction de Transfert en BF &#8212; Asservissement  documentation</title>
 <script>
@@ -24,16 +23,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=cbc8eb3a" />
 
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -246,14 +245,14 @@
               <article class="bd-article" role="main">
                 
   <section id="fonction-de-transfert-en-bf">
-<h1>Fonction de Transfert en BF<a class="headerlink" href="#fonction-de-transfert-en-bf" title="Permalink to this heading">#</a></h1>
+<h1>Fonction de Transfert en BF<a class="headerlink" href="#fonction-de-transfert-en-bf" title="Link to this heading">#</a></h1>
 <section id="objectif">
-<h2>Objectif<a class="headerlink" href="#objectif" title="Permalink to this heading">#</a></h2>
+<h2>Objectif<a class="headerlink" href="#objectif" title="Link to this heading">#</a></h2>
 <p>Dans ce tutorial, nous montrons comment utiliser l’expression de la FTBF pour régler un correcteur proportionnel.</p>
 <figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="../_images/closed_loop_2d1.svg"><img alt="Boucle Fermée" src="../_images/closed_loop_2d1.svg" width="300" /></a>
 <figcaption>
-<p><span class="caption-text">Boucle Fermée</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Boucle Fermée</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>La fonction de transfert est égale à :</p>
@@ -263,7 +262,7 @@
 L’objectif est de calibrer un correcteur proportionnel (c-a-d <span class="math notranslate nohighlight">\(C(z)=K\)</span>) de sorte à obtenir un gain statique en boucle fermée de 0.8</p>
 </section>
 <section id="methodologie">
-<h2>Méthodologie<a class="headerlink" href="#methodologie" title="Permalink to this heading">#</a></h2>
+<h2>Méthodologie<a class="headerlink" href="#methodologie" title="Link to this heading">#</a></h2>
 <p>Pour calibrer la valeur de <span class="math notranslate nohighlight">\(K\)</span>, nous allons procéder en trois temps:</p>
 <ol class="arabic simple">
 <li><p>Calcul de la fonction de transfert en boucle fermée (FTBF),</p></li>
@@ -271,7 +270,7 @@ L’objectif est de calibrer un correcteur proportionnel (c-a-d <span class="mat
 <li><p>Calibration de K.</p></li>
 </ol>
 <section id="ftbf">
-<h3>FTBF<a class="headerlink" href="#ftbf" title="Permalink to this heading">#</a></h3>
+<h3>FTBF<a class="headerlink" href="#ftbf" title="Link to this heading">#</a></h3>
 <p>Pour calculer la FTBF, nous allons utiliser la formule (à connaître):</p>
 <div class="math notranslate nohighlight">
 \[FTBF(z) = \frac{A(z)}{1+A(z)B(z)}\]</div>
@@ -287,13 +286,13 @@ L’objectif est de calibrer un correcteur proportionnel (c-a-d <span class="mat
 \[FTBF(z) = \frac{0.022K}{z-0.666+0.022K}\]</div>
 </section>
 <section id="gain-statique">
-<h3>Gain statique<a class="headerlink" href="#gain-statique" title="Permalink to this heading">#</a></h3>
+<h3>Gain statique<a class="headerlink" href="#gain-statique" title="Link to this heading">#</a></h3>
 <p>Comme le système est un système à temps discret, le gain statique <span class="math notranslate nohighlight">\(G\)</span> est donné par <span class="math notranslate nohighlight">\(FTBF(1)\)</span>. Il en vient que</p>
 <div class="math notranslate nohighlight">
 \[G = FTBF(1) = \frac{0.022K}{1-0.666+0.022K}= \frac{0.022K}{0.333+0.022K}\]</div>
 </section>
 <section id="calibration">
-<h3>Calibration<a class="headerlink" href="#calibration" title="Permalink to this heading">#</a></h3>
+<h3>Calibration<a class="headerlink" href="#calibration" title="Link to this heading">#</a></h3>
 <p>Pour obtenir un gain statique de 0.8, il faut poser l’égalité:</p>
 <div class="math notranslate nohighlight">
 \[\frac{0.022K}{0.333+0.022K} = 0.8\]</div>
@@ -305,7 +304,7 @@ K &amp; \approx 60\end{split}\]</div>
 </section>
 </section>
 <section id="verification">
-<h2>Vérification<a class="headerlink" href="#verification" title="Permalink to this heading">#</a></h2>
+<h2>Vérification<a class="headerlink" href="#verification" title="Link to this heading">#</a></h2>
 <p>En asservissement, il est toujours utilise de vérifier le résultat avec une simulation. En utilisant Python, nous obtenons
 la réponse indicielle suivante.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">control</span> <span class="kn">import</span> <span class="n">tf</span><span class="p">,</span> <span class="n">feedback</span><span class="p">,</span> <span class="n">step_response</span>
@@ -376,7 +375,7 @@ la réponse indicielle suivante.</p>
   
   <div class="footer-item">
     <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.2.3.<br>
 </p>
   </div>
   

@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Systèmes SLIT &#8212; Asservissement  documentation</title>
 <script>
@@ -24,16 +23,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=cbc8eb3a" />
 
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -366,12 +365,12 @@
               <article class="bd-article" role="main">
                 
   <section id="systemes-slit">
-<h1>Systèmes SLIT<a class="headerlink" href="#systemes-slit" title="Permalink to this heading">#</a></h1>
+<h1>Systèmes SLIT<a class="headerlink" href="#systemes-slit" title="Link to this heading">#</a></h1>
 <section id="equation-de-recurrence">
-<h2>Equation de récurrence<a class="headerlink" href="#equation-de-recurrence" title="Permalink to this heading">#</a></h2>
+<h2>Equation de récurrence<a class="headerlink" href="#equation-de-recurrence" title="Link to this heading">#</a></h2>
 <p>Dans ce cours, nous nous intéressons spécifiquement à l’analyse des SLITs modélisables par une équation de récurrence.</p>
 <section id="expression">
-<h3>Expression<a class="headerlink" href="#expression" title="Permalink to this heading">#</a></h3>
+<h3>Expression<a class="headerlink" href="#expression" title="Link to this heading">#</a></h3>
 <p>Lorsqu’un système est modélisable par une équation de récurrence, le lien entre l’entrée <span class="math notranslate nohighlight">\(e[n]\)</span> et la sortie <span class="math notranslate nohighlight">\(s[n]\)</span> est donné par :</p>
 <div class="math notranslate nohighlight">
 \[a_L s[n+L] + \cdots + a_0 s[n] = b_K e[n+K] + \cdots + b_0 e[n]\]</div>
@@ -383,23 +382,23 @@ sous la forme</p>
 </section>
 </section>
 <section id="fonction-de-transfert">
-<h2>Fonction de transfert<a class="headerlink" href="#fonction-de-transfert" title="Permalink to this heading">#</a></h2>
+<h2>Fonction de transfert<a class="headerlink" href="#fonction-de-transfert" title="Link to this heading">#</a></h2>
 <p>Lorsque les conditions initiales sont nulles, la transformée en Z de la sortie s’exprime sous la forme
 <span class="math notranslate nohighlight">\(S(z)=H(z)E(z)\)</span> où <span class="math notranslate nohighlight">\(H(z)\)</span> correspond à la fonction de transfert en Z du système.</p>
 <figure class="align-center" id="id2">
 <a class="reference internal image-reference" href="../../_images/representation_d.svg"><img alt="schema bloc" src="../../_images/representation_d.svg" width="250" /></a>
 <figcaption>
-<p><span class="caption-text">Schéma Bloc</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Schéma Bloc</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="forme-polynomiale">
-<h3>Forme polynomiale<a class="headerlink" href="#forme-polynomiale" title="Permalink to this heading">#</a></h3>
+<h3>Forme polynomiale<a class="headerlink" href="#forme-polynomiale" title="Link to this heading">#</a></h3>
 <p>Pour un système régit par une équation de récurrence, la fonction de transfert du système est donnée par :</p>
 <div class="math notranslate nohighlight">
 \[H(z)=\frac{S(z)}{E(z)}=\frac{b_K z^{K} + \cdots + b_1 z + b_0}{a_L z^{L}+ \cdots + a_1z+ a_0}\]</div>
 </section>
 <section id="forme-factorisee">
-<h3>Forme Factorisée<a class="headerlink" href="#forme-factorisee" title="Permalink to this heading">#</a></h3>
+<h3>Forme Factorisée<a class="headerlink" href="#forme-factorisee" title="Link to this heading">#</a></h3>
 <p>Pour mettre en évidence les points singuliers de la fonction de transfert, il est possible de réexprimer la fonction de transfert sous une forme factorisée.</p>
 <div class="math notranslate nohighlight">
 \[H(z)=G\frac{(z-z_1)(z-z_2)\cdots(z-z_K)}{(z-p_1)(z-p_2)\cdots(z-p_L)}\]</div>
@@ -410,7 +409,7 @@ sous la forme</p>
 </ul>
 </section>
 <section id="proprietes">
-<h3>Propriétés<a class="headerlink" href="#proprietes" title="Permalink to this heading">#</a></h3>
+<h3>Propriétés<a class="headerlink" href="#proprietes" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Stabilité: Pour qu’un système à temps discret soit stable, il faut que tous les pôles de sa fonction de transfert sont inclus dans le cercle de rayon unité c-a-d si <span class="math notranslate nohighlight">\(|p_l|\le 1`\)</span></p></li>
 <li><p>Valeur Initiale :</p></li>
@@ -425,10 +424,10 @@ sous la forme</p>
 </section>
 </section>
 <section id="reponse-temporelle">
-<h2>Réponse Temporelle<a class="headerlink" href="#reponse-temporelle" title="Permalink to this heading">#</a></h2>
+<h2>Réponse Temporelle<a class="headerlink" href="#reponse-temporelle" title="Link to this heading">#</a></h2>
 <p>Pour obtenir la réponse temporelle d’un système à une entrée <span class="math notranslate nohighlight">\(e[n]\)</span>, deux solutions sont possibles.</p>
 <section id="technique-1-decomposition-en-elements-simples">
-<h3>Technique 1 (Décomposition en éléments simples)<a class="headerlink" href="#technique-1-decomposition-en-elements-simples" title="Permalink to this heading">#</a></h3>
+<h3>Technique 1 (Décomposition en éléments simples)<a class="headerlink" href="#technique-1-decomposition-en-elements-simples" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Calcul de la transformée en Z de la sortie du système c-à-d <span class="math notranslate nohighlight">\(S(z) = H(z)E(z)\)</span> où <span class="math notranslate nohighlight">\(E(z)\)</span> correspond à la transformée en Z de l’entrée.</p></li>
 <li><p>Décomposition en éléments simples de la sortie <span class="math notranslate nohighlight">\(S(z)/z\)</span>, puis de <span class="math notranslate nohighlight">\(S(z)\)</span>.</p></li>
@@ -436,14 +435,14 @@ sous la forme</p>
 </ol>
 </section>
 <section id="technique-2-equation-de-recurrence">
-<h3>Technique 2 (Equation de récurrence)<a class="headerlink" href="#technique-2-equation-de-recurrence" title="Permalink to this heading">#</a></h3>
+<h3>Technique 2 (Equation de récurrence)<a class="headerlink" href="#technique-2-equation-de-recurrence" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Obtention de l’équation de récurrence donnant <span class="math notranslate nohighlight">\(s[n]\)</span> en fonction de <span class="math notranslate nohighlight">\(s[l]~(l&lt;n)\)</span> et <span class="math notranslate nohighlight">\(e[k]~(k\le n)\)</span></p></li>
 <li><p>Evaluation de la sortie <span class="math notranslate nohighlight">\(s[n]\)</span> en remplaçant les <span class="math notranslate nohighlight">\(e[k]\)</span> par leur valeur numérique.</p></li>
 </ol>
 </section>
 <section id="exemple">
-<h3>Exemple<a class="headerlink" href="#exemple" title="Permalink to this heading">#</a></h3>
+<h3>Exemple<a class="headerlink" href="#exemple" title="Link to this heading">#</a></h3>
 <p>Considérons un système de premier ordre défini par la fonction de transfert</p>
 <div class="math notranslate nohighlight">
 \[H(z) = \frac{S(z)}{E(z)} = \frac{1}{z-0.5}\]</div>
@@ -495,9 +494,9 @@ s[3] &amp;= u[2] + 0.5s[2] = 1.75\end{split}\]</div>
 </section>
 </section>
 <section id="reponse-frequentielle">
-<h2>Réponse Fréquentielle<a class="headerlink" href="#reponse-frequentielle" title="Permalink to this heading">#</a></h2>
+<h2>Réponse Fréquentielle<a class="headerlink" href="#reponse-frequentielle" title="Link to this heading">#</a></h2>
 <section id="id1">
-<h3>Expression<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3>Expression<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>Il est possible de montrer que si <span class="math notranslate nohighlight">\(e[n]=e^{j\omega nT_e}\)</span>, la sortie s’exprime sous la forme <span class="math notranslate nohighlight">\(s[n]=H\left(e^{j\omega T_e}\right)e^{j\omega nT_e}\)</span> où
 <span class="math notranslate nohighlight">\(H\left(e^{j\omega T_e}\right)\)</span> désigne la réponse fréquentielle du système.
 Notons que la réponse fréquentielle peut s’obtenir directement à partir de la fonction de transfert en posant :</p>
@@ -507,7 +506,7 @@ Notons que la réponse fréquentielle peut s’obtenir directement à partir de 
 où <span class="math notranslate nohighlight">\(\omega_e=2\pi F_e\)</span> désigne la pulsation d’échantillonnage.</p>
 </section>
 <section id="representation">
-<h3>Représentation<a class="headerlink" href="#representation" title="Permalink to this heading">#</a></h3>
+<h3>Représentation<a class="headerlink" href="#representation" title="Link to this heading">#</a></h3>
 <p>Comme la réponse fréquentielle est généralement complexe, nous représentons le plus souvent :</p>
 <ul class="simple">
 <li><p>son module <span class="math notranslate nohighlight">\(|H\left(e^{j\omega T_e}\right)|\)</span>,</p></li>
@@ -562,7 +561,7 @@ où <span class="math notranslate nohighlight">\(\omega_e=2\pi F_e\)</span> dés
   
   <div class="footer-item">
     <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.2.3.<br>
 </p>
   </div>
   

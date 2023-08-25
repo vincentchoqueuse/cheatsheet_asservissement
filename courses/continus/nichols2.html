@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Correction P &#8212; Asservissement  documentation</title>
 <script>
@@ -24,16 +23,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=cbc8eb3a" />
 
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -320,9 +319,9 @@
               <article class="bd-article" role="main">
                 
   <section id="correction-p">
-<h1>Correction P<a class="headerlink" href="#correction-p" title="Permalink to this heading">#</a></h1>
+<h1>Correction P<a class="headerlink" href="#correction-p" title="Link to this heading">#</a></h1>
 <section id="contexte">
-<h2>Contexte<a class="headerlink" href="#contexte" title="Permalink to this heading">#</a></h2>
+<h2>Contexte<a class="headerlink" href="#contexte" title="Link to this heading">#</a></h2>
 <p>Dans ce tutorial, nous nous intéressons à la correction d’un système de 2ieme ordre avec un retour unitaire.</p>
 <figure class="align-center">
 <a class="reference internal image-reference" href="../../_images/closed_loop_2.svg"><img alt="Boucle Fermée avec Retour unitaire" src="../../_images/closed_loop_2.svg" width="350" /></a>
@@ -333,13 +332,13 @@
 <p>Notre objectif est d’obtenir en boucle fermée un coefficient d’amortissement de <span class="math notranslate nohighlight">\(m=0.52\)</span>.</p>
 </section>
 <section id="calibration">
-<h2>Calibration<a class="headerlink" href="#calibration" title="Permalink to this heading">#</a></h2>
+<h2>Calibration<a class="headerlink" href="#calibration" title="Link to this heading">#</a></h2>
 <p>Pour respecter ce cahier des charges, nous allons utiliser un correcteur proportionnel (P) :</p>
 <div class="math notranslate nohighlight">
 \[C(p) = K_i\]</div>
 <p>Nous proposons de calibrer le paramètre du correcteur, <span class="math notranslate nohighlight">\(K_i\)</span>, directement dans le plan de Black Nichols.</p>
 <section id="black-nichols">
-<h3>Black-Nichols<a class="headerlink" href="#black-nichols" title="Permalink to this heading">#</a></h3>
+<h3>Black-Nichols<a class="headerlink" href="#black-nichols" title="Link to this heading">#</a></h3>
 <p>Dans un premier temps, nous allons représenter le comportement fréquentiel du système <span class="math notranslate nohighlight">\(F(p)\)</span> en boucle ouverte.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">control</span> <span class="kn">import</span> <span class="n">tf</span><span class="p">,</span> <span class="n">feedback</span>
 <span class="kn">from</span> <span class="nn">control_plotly</span> <span class="kn">import</span> <span class="n">bode</span><span class="p">,</span><span class="n">nichols</span><span class="p">,</span> <span class="n">step</span>
@@ -351,12 +350,12 @@
 <figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="../../_images/P_1.jpg"><img alt="../../_images/P_1.jpg" src="../../_images/P_1.jpg" style="width: 700px;" /></a>
 <figcaption>
-<p><span class="caption-text">Diagramme de Black Nichols du système en boucle ouverte</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Diagramme de Black Nichols du système en boucle ouverte</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="choix-du-gain">
-<h3>Choix du gain<a class="headerlink" href="#choix-du-gain" title="Permalink to this heading">#</a></h3>
+<h3>Choix du gain<a class="headerlink" href="#choix-du-gain" title="Link to this heading">#</a></h3>
 <p>La seconde étape consiste à calibrer le gain proportionnel du correcteur. Pour calibrer ce gain, nous allons exploiter
 le comportement à la résonance. En approximant le comportement du système en boucle fermée par un second ordre, le facteur de résonance <span class="math notranslate nohighlight">\(M_{dB}\)</span>
 s’obtient à partir du coefficient d’amortissement <span class="math notranslate nohighlight">\(m\)</span> en utilisant les <a class="reference external" href="https://vincentchoqueuse.github.io/web_app_2nd_order_performances/index.html">abaque de second ordre</a>.</p>
@@ -372,19 +371,19 @@ s’obtient à partir du coefficient d’amortissement <span class="math notrans
 <figure class="align-center" id="id2">
 <a class="reference internal image-reference" href="../../_images/P_2.jpg"><img alt="../../_images/P_2.jpg" src="../../_images/P_2.jpg" style="width: 700px;" /></a>
 <figcaption>
-<p><span class="caption-text">Diagramme de Black Nichols : correction proportionnelle (Gain statique <span class="math notranslate nohighlight">\(G_0=-2.6\)</span> dB)</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Diagramme de Black Nichols : correction proportionnelle (Gain statique <span class="math notranslate nohighlight">\(G_0=-2.6\)</span> dB)</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id3">
 <a class="reference internal image-reference" href="../../_images/P_3.jpg"><img alt="../../_images/P_3.jpg" src="../../_images/P_3.jpg" style="width: 700px;" /></a>
 <figcaption>
-<p><span class="caption-text">Diagramme de Black Nichols : correction proportionnelle (Gain maximum <span class="math notranslate nohighlight">\(G_m=-1.6\)</span> dB)</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Diagramme de Black Nichols : correction proportionnelle (Gain maximum <span class="math notranslate nohighlight">\(G_m=-1.6\)</span> dB)</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id4">
 <a class="reference internal image-reference" href="../../_images/P_4.jpg"><img alt="../../_images/P_4.jpg" src="../../_images/P_4.jpg" style="width: 700px;" /></a>
 <figcaption>
-<p><span class="caption-text">Diagramme de Black Nichols : correction proportionnelle (pulsation de résonance <span class="math notranslate nohighlight">\(\omega_r =1.245\)</span> rad/s)</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Diagramme de Black Nichols : correction proportionnelle (pulsation de résonance <span class="math notranslate nohighlight">\(\omega_r =1.245\)</span> rad/s)</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Notons qu’il est possible d’anticiper le comportement de la boucle fermée.</p>
@@ -396,13 +395,13 @@ s’obtient à partir du coefficient d’amortissement <span class="math notrans
 </section>
 </section>
 <section id="verification">
-<h2>Vérification<a class="headerlink" href="#verification" title="Permalink to this heading">#</a></h2>
+<h2>Vérification<a class="headerlink" href="#verification" title="Link to this heading">#</a></h2>
 <p>La figure suivante présente la réponse indicielle du système en boucle fermée. Nous trouvons un premier dépassement relatif d’environ <span class="math notranslate nohighlight">\(15\%\)</span>.
 Concernant la précision, nous remarquons que la valeur finale est égale à <span class="math notranslate nohighlight">\(s(\infty) =0.74\)</span> ce qui montre que le système est peu précis. Le temps de réponse mesuré est environ égal à <span class="math notranslate nohighlight">\(t_r=2.72\)</span> s.</p>
 <figure class="align-center" id="id5">
 <a class="reference internal image-reference" href="../../_images/P_5.jpg"><img alt="../../_images/P_5.jpg" src="../../_images/P_5.jpg" style="width: 700px;" /></a>
 <figcaption>
-<p><span class="caption-text">Réponse indicielle du système corrigé en boucle fermée (échelon unité)</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Réponse indicielle du système corrigé en boucle fermée (échelon unité)</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -453,7 +452,7 @@ Concernant la précision, nous remarquons que la valeur finale est égale à <sp
   
   <div class="footer-item">
     <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.2.3.<br>
 </p>
   </div>
   

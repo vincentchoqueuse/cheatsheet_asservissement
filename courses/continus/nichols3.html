@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Correction PI &#8212; Asservissement  documentation</title>
 <script>
@@ -24,16 +23,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=cbc8eb3a" />
 
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -330,9 +329,9 @@
               <article class="bd-article" role="main">
                 
   <section id="correction-pi">
-<h1>Correction PI<a class="headerlink" href="#correction-pi" title="Permalink to this heading">#</a></h1>
+<h1>Correction PI<a class="headerlink" href="#correction-pi" title="Link to this heading">#</a></h1>
 <section id="contexte">
-<h2>Contexte<a class="headerlink" href="#contexte" title="Permalink to this heading">#</a></h2>
+<h2>Contexte<a class="headerlink" href="#contexte" title="Link to this heading">#</a></h2>
 <p>Dans ce tutorial, nous nous intéressons à la correction d’un système de 2ieme ordre avec un retour unitaire.</p>
 <figure class="align-center">
 <a class="reference internal image-reference" href="../../_images/closed_loop_2.svg"><img alt="Boucle Fermée avec Retour unitaire" src="../../_images/closed_loop_2.svg" width="350" /></a>
@@ -347,14 +346,14 @@
 </ul>
 </section>
 <section id="calibration">
-<h2>Calibration<a class="headerlink" href="#calibration" title="Permalink to this heading">#</a></h2>
+<h2>Calibration<a class="headerlink" href="#calibration" title="Link to this heading">#</a></h2>
 <p>Pour respecter ce cahier des charges, nous allons utiliser un correcteur proportionnel intégrale (PI) :</p>
 <div class="math notranslate nohighlight">
 \[C(p) = K_i \left(1+ \frac{1}{T_ip}\right) = K_i \frac{T_i p+1}{T_ip}\]</div>
 <p>Dans ce tutorial, nous allons calibrer les paramètres du correcteur, c-à-d <span class="math notranslate nohighlight">\(K_i\)</span> et <span class="math notranslate nohighlight">\(T_i\)</span>, directement dans le plan
 de Black Nichols.</p>
 <section id="black-nichols">
-<h3>Black-Nichols<a class="headerlink" href="#black-nichols" title="Permalink to this heading">#</a></h3>
+<h3>Black-Nichols<a class="headerlink" href="#black-nichols" title="Link to this heading">#</a></h3>
 <p>Dans un premier temps, nous allons représenter le comportement fréquentiel du système <span class="math notranslate nohighlight">\(F(p)\)</span> en boucle ouverte.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">control</span> <span class="kn">import</span> <span class="n">tf</span><span class="p">,</span> <span class="n">feedback</span>
 <span class="kn">from</span> <span class="nn">control_plotly</span> <span class="kn">import</span> <span class="n">bode</span><span class="p">,</span><span class="n">nichols</span><span class="p">,</span> <span class="n">step</span>
@@ -366,12 +365,12 @@ de Black Nichols.</p>
 <figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="../../_images/PI_1.png"><img alt="../../_images/PI_1.png" src="../../_images/PI_1.png" style="width: 700px;" /></a>
 <figcaption>
-<p><span class="caption-text">Diagramme de Black Nichols du système en boucle ouverte</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Diagramme de Black Nichols du système en boucle ouverte</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="choix-du-gain-partie-1">
-<h3>Choix du gain (Partie 1)<a class="headerlink" href="#choix-du-gain-partie-1" title="Permalink to this heading">#</a></h3>
+<h3>Choix du gain (Partie 1)<a class="headerlink" href="#choix-du-gain-partie-1" title="Link to this heading">#</a></h3>
 <p>La seconde étape consiste à calibrer “grossièrement” le gain proportionnel du correcteur. Pour calibrer ce gain, nous allons exploiter
 le comportement à la résonance. En approximant le comportement du système en boucle fermée par un second ordre, le facteur de résonance <span class="math notranslate nohighlight">\(M_{dB}\)</span>
 s’obtient à partir du coefficient d’amortissement <span class="math notranslate nohighlight">\(m\)</span> en utilisant les abaques. Comme le correcteur PI permet d’obtenir un système précis en boucle fermée, le gain statique en BF est égal à 1 en valeur naturelle c-à-d <span class="math notranslate nohighlight">\(G_0=0\)</span> dB.
@@ -391,12 +390,12 @@ appliquer un gain <span class="math notranslate nohighlight">\(K_1\)</span> de s
 <figure class="align-center" id="id2">
 <a class="reference internal image-reference" href="../../_images/PI_2.png"><img alt="../../_images/PI_2.png" src="../../_images/PI_2.png" style="width: 700px;" /></a>
 <figcaption>
-<p><span class="caption-text">Diagramme de Black Nichols : correction proportionnelle</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Diagramme de Black Nichols : correction proportionnelle</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="choix-du-parametre-ti">
-<h3>Choix du paramètre Ti<a class="headerlink" href="#choix-du-parametre-ti" title="Permalink to this heading">#</a></h3>
+<h3>Choix du paramètre Ti<a class="headerlink" href="#choix-du-parametre-ti" title="Link to this heading">#</a></h3>
 <p>La troisième étape consiste à régler le paramètre <span class="math notranslate nohighlight">\(T_i\)</span>. L’action intégral du correcteur va entrainer un déphasage de -90 degrées en basse-fréquences (translation vers la gauche).
 Il est alors important de bien calibrer le paramètre <span class="math notranslate nohighlight">\(T_i\)</span> pour éviter que ce décalage n’impacte la marge de phase.</p>
 <p>Pour ne pas modifier le point de résonance obtenu, on choisit la pulsation de cassure <span class="math notranslate nohighlight">\(1/T_i\)</span> suffisamment éloignée de <span class="math notranslate nohighlight">\(\omega_r\)</span> (pulsation de résonance au point de tangence) de telle manière à ne pas introduire un déphasage supplémentaire en ce point.
@@ -418,12 +417,12 @@ de paramètres <span class="math notranslate nohighlight">\(K_1\)</span> et <spa
 <figure class="align-center" id="id3">
 <a class="reference internal image-reference" href="../../_images/PI_3.png"><img alt="../../_images/PI_3.png" src="../../_images/PI_3.png" style="width: 700px;" /></a>
 <figcaption>
-<p><span class="caption-text">Diagramme de Black Nichols : correction PI (gain <span class="math notranslate nohighlight">\(K_1\)</span>)</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Diagramme de Black Nichols : correction PI (gain <span class="math notranslate nohighlight">\(K_1\)</span>)</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="choix-du-gain-partie-2">
-<h3>Choix du gain (Partie 2)<a class="headerlink" href="#choix-du-gain-partie-2" title="Permalink to this heading">#</a></h3>
+<h3>Choix du gain (Partie 2)<a class="headerlink" href="#choix-du-gain-partie-2" title="Link to this heading">#</a></h3>
 <p>L’utilisation de l’intégration intégrale peut modifier légèrement le comportement à la résonance. La dernière étape consiste à ajuster
 le gain de manière à retrouver la résonance recherchée.</p>
 <ul class="simple">
@@ -443,19 +442,19 @@ de paramètres <span class="math notranslate nohighlight">\(K_i\)</span> et <spa
 <figure class="align-center" id="id4">
 <a class="reference internal image-reference" href="../../_images/PI_4.png"><img alt="../../_images/PI_4.png" src="../../_images/PI_4.png" style="width: 700px;" /></a>
 <figcaption>
-<p><span class="caption-text">Diagramme de Black Nichols : correction PI (gain <span class="math notranslate nohighlight">\(K_i\)</span>)</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Diagramme de Black Nichols : correction PI (gain <span class="math notranslate nohighlight">\(K_i\)</span>)</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 </section>
 <section id="verification">
-<h2>Vérification<a class="headerlink" href="#verification" title="Permalink to this heading">#</a></h2>
+<h2>Vérification<a class="headerlink" href="#verification" title="Link to this heading">#</a></h2>
 <p>La figure suivante présente la réponse indicielle du système en boucle fermée. Nous trouvons un premier dépassement relatif d’environ <span class="math notranslate nohighlight">\(13\%\)</span> et donc un facteur d’amortissement égal à <span class="math notranslate nohighlight">\(m=0.54\)</span>, ce qui est très proche du cahier des charges.
 Concernant la précision, nous constatons bien l’influence du PI qui permet d’atteindre un gain statique unitaire en boucle fermée.</p>
 <figure class="align-center" id="id5">
 <a class="reference internal image-reference" href="../../_images/PI_5.png"><img alt="../../_images/PI_5.png" src="../../_images/PI_5.png" style="width: 700px;" /></a>
 <figcaption>
-<p><span class="caption-text">Réponse indicielle du système corrigé en boucle fermée (échelon unité)</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Réponse indicielle du système corrigé en boucle fermée (échelon unité)</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -506,7 +505,7 @@ Concernant la précision, nous constatons bien l’influence du PI qui permet d�
   
   <div class="footer-item">
     <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.2.3.<br>
 </p>
   </div>
   

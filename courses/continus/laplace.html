@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Transformée de Laplace &#8212; Asservissement  documentation</title>
 <script>
@@ -24,16 +23,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=cbc8eb3a" />
 
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -342,14 +341,14 @@
               <article class="bd-article" role="main">
                 
   <section id="transformee-de-laplace">
-<h1>Transformée de Laplace<a class="headerlink" href="#transformee-de-laplace" title="Permalink to this heading">#</a></h1>
+<h1>Transformée de Laplace<a class="headerlink" href="#transformee-de-laplace" title="Link to this heading">#</a></h1>
 <section id="definition">
-<h2>Définition<a class="headerlink" href="#definition" title="Permalink to this heading">#</a></h2>
+<h2>Définition<a class="headerlink" href="#definition" title="Link to this heading">#</a></h2>
 <p>La transformée de Laplace unilatérale d’un signal est donnée par</p>
 <div class="math notranslate nohighlight">
 \[X(p) = \mathcal{L}[x(t)]=\int_{0}^{\infty} x(t)e^{-pt}dt\]</div>
 <section id="exemple">
-<h3>Exemple<a class="headerlink" href="#exemple" title="Permalink to this heading">#</a></h3>
+<h3>Exemple<a class="headerlink" href="#exemple" title="Link to this heading">#</a></h3>
 <p>Soit <span class="math notranslate nohighlight">\(x(t)=u(t)\)</span>, l’échelon unité défini par :</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}u(t) =\left\{\begin{array}{cl} 1 &amp; \text{ si }t\ge 0\\
@@ -365,7 +364,7 @@ La transformée de Laplace n’est définie que pour <span class="math notrans
 </section>
 </section>
 <section id="proprietes">
-<h2>Propriétés<a class="headerlink" href="#proprietes" title="Permalink to this heading">#</a></h2>
+<h2>Propriétés<a class="headerlink" href="#proprietes" title="Link to this heading">#</a></h2>
 <p>La transformée de Laplace possède les propriétés suivantes:</p>
 <ul class="simple">
 <li><p>Linéarité :</p></li>
@@ -389,9 +388,9 @@ La transformée de Laplace n’est définie que pour <span class="math notrans
 \[x(\infty)=\lim_{p\to 0} p X(p)\]</div>
 </section>
 <section id="signaux-usuels">
-<h2>Signaux Usuels<a class="headerlink" href="#signaux-usuels" title="Permalink to this heading">#</a></h2>
+<h2>Signaux Usuels<a class="headerlink" href="#signaux-usuels" title="Link to this heading">#</a></h2>
 <section id="impulsion-de-dirac">
-<h3>Impulsion de Dirac<a class="headerlink" href="#impulsion-de-dirac" title="Permalink to this heading">#</a></h3>
+<h3>Impulsion de Dirac<a class="headerlink" href="#impulsion-de-dirac" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Définition :</p></li>
 </ul>
@@ -407,7 +406,7 @@ La transformée de Laplace n’est définie que pour <span class="math notrans
 \[X(p) = 1\]</div>
 </section>
 <section id="echelon-unitaire">
-<h3>Echelon Unitaire<a class="headerlink" href="#echelon-unitaire" title="Permalink to this heading">#</a></h3>
+<h3>Echelon Unitaire<a class="headerlink" href="#echelon-unitaire" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Définition :</p></li>
 </ul>
@@ -423,7 +422,7 @@ La transformée de Laplace n’est définie que pour <span class="math notrans
 \[U(p) = \frac{1}{p}\]</div>
 </section>
 <section id="exponentielle-decroissante">
-<h3>Exponentielle Décroissante<a class="headerlink" href="#exponentielle-decroissante" title="Permalink to this heading">#</a></h3>
+<h3>Exponentielle Décroissante<a class="headerlink" href="#exponentielle-decroissante" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Définition :</p></li>
 </ul>
@@ -436,7 +435,7 @@ La transformée de Laplace n’est définie que pour <span class="math notrans
 \[X(p) = \frac{1}{p+\alpha}\]</div>
 </section>
 <section id="sinusoide-amortie-part-1">
-<h3>Sinusoide Amortie (Part 1)<a class="headerlink" href="#sinusoide-amortie-part-1" title="Permalink to this heading">#</a></h3>
+<h3>Sinusoide Amortie (Part 1)<a class="headerlink" href="#sinusoide-amortie-part-1" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Définition :</p></li>
 </ul>
@@ -449,7 +448,7 @@ La transformée de Laplace n’est définie que pour <span class="math notrans
 \[X(p) = \frac{\omega}{(p+\alpha)^2+\omega^2}\]</div>
 </section>
 <section id="sinusoide-amortie-part-2">
-<h3>Sinusoide Amortie (Part 2)<a class="headerlink" href="#sinusoide-amortie-part-2" title="Permalink to this heading">#</a></h3>
+<h3>Sinusoide Amortie (Part 2)<a class="headerlink" href="#sinusoide-amortie-part-2" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Définition :</p></li>
 </ul>
@@ -509,7 +508,7 @@ La transformée de Laplace n’est définie que pour <span class="math notrans
   
   <div class="footer-item">
     <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.2.3.<br>
 </p>
   </div>
   

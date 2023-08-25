@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Systèmes de 2nd ordre &#8212; Asservissement  documentation</title>
 <script>
@@ -24,16 +23,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=cbc8eb3a" />
 
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -382,11 +381,11 @@
               <article class="bd-article" role="main">
                 
   <section id="systemes-de-2nd-ordre">
-<h1>Systèmes de 2nd ordre<a class="headerlink" href="#systemes-de-2nd-ordre" title="Permalink to this heading">#</a></h1>
+<h1>Systèmes de 2nd ordre<a class="headerlink" href="#systemes-de-2nd-ordre" title="Link to this heading">#</a></h1>
 <section id="modelisation">
-<h2>Modélisation<a class="headerlink" href="#modelisation" title="Permalink to this heading">#</a></h2>
+<h2>Modélisation<a class="headerlink" href="#modelisation" title="Link to this heading">#</a></h2>
 <section id="equation-differentielle">
-<h3>Equation Différentielle<a class="headerlink" href="#equation-differentielle" title="Permalink to this heading">#</a></h3>
+<h3>Equation Différentielle<a class="headerlink" href="#equation-differentielle" title="Link to this heading">#</a></h3>
 <p>Pour un système passe-bas linéaire d’ordre 2, le lien entre l’entrée et la sortie peut être décrit par une équation différentielle de second ordre à coefficients constants.</p>
 <div class="math notranslate nohighlight">
 \[\frac{1}{\omega_n^2}\frac{d^2 s(t)}{dt^2}+\frac{2m}{\omega_n}\frac{d s(t)}{dt}+s(t)=Ke(t)\]</div>
@@ -401,16 +400,16 @@
 </ul>
 </section>
 <section id="fonction-de-transfert">
-<h3>Fonction de Transfert<a class="headerlink" href="#fonction-de-transfert" title="Permalink to this heading">#</a></h3>
+<h3>Fonction de Transfert<a class="headerlink" href="#fonction-de-transfert" title="Link to this heading">#</a></h3>
 <p>La fonction de transfert d’un système passe-bas de second ordre est donnée par :</p>
 <div class="math notranslate nohighlight">
 \[H(p)=\frac{K}{\frac{1}{\omega_n^2}p^2+\frac{2m}{\omega_n}p+1}\]</div>
 </section>
 </section>
 <section id="poles">
-<h2>Pôles<a class="headerlink" href="#poles" title="Permalink to this heading">#</a></h2>
+<h2>Pôles<a class="headerlink" href="#poles" title="Link to this heading">#</a></h2>
 <section id="expression">
-<h3>Expression<a class="headerlink" href="#expression" title="Permalink to this heading">#</a></h3>
+<h3>Expression<a class="headerlink" href="#expression" title="Link to this heading">#</a></h3>
 <p>Les pôles correspondent aux valeurs de <span class="math notranslate nohighlight">\(p\)</span> pour lesquelles</p>
 <div class="math notranslate nohighlight">
 \[\frac{1}{\omega_n^2}p^2+\frac{2m}{\omega_n}p+1 = 0\]</div>
@@ -439,13 +438,13 @@
 </ul>
 </section>
 <section id="exemple">
-<h3>Exemple<a class="headerlink" href="#exemple" title="Permalink to this heading">#</a></h3>
+<h3>Exemple<a class="headerlink" href="#exemple" title="Link to this heading">#</a></h3>
 <figure class="align-default">
 <img alt="../../_images/second_order-1.png" class="plot-directive" src="../../_images/second_order-1.png" />
 </figure>
 </section>
 <section id="identification">
-<h3>Identification<a class="headerlink" href="#identification" title="Permalink to this heading">#</a></h3>
+<h3>Identification<a class="headerlink" href="#identification" title="Link to this heading">#</a></h3>
 <p>Lorsque <span class="math notranslate nohighlight">\(0\le m&lt;1\)</span>, l’identification de la pulsation propre et coefficient d’amortissement peut s’obtenir de la manière suivante:</p>
 <ul class="simple">
 <li><p>Pulsation propre: la pulsation propre correspond au module des pôles c-à-d <span class="math notranslate nohighlight">\(\omega_n=|p_{k}|\)</span>,</p></li>
@@ -455,9 +454,9 @@
 </section>
 </section>
 <section id="reponse-indicielle">
-<h2>Réponse Indicielle<a class="headerlink" href="#reponse-indicielle" title="Permalink to this heading">#</a></h2>
+<h2>Réponse Indicielle<a class="headerlink" href="#reponse-indicielle" title="Link to this heading">#</a></h2>
 <section id="cas-ou-m-1">
-<h3>Cas où <span class="math notranslate nohighlight">\(m&gt;1\)</span><a class="headerlink" href="#cas-ou-m-1" title="Permalink to this heading">#</a></h3>
+<h3>Cas où <span class="math notranslate nohighlight">\(m&gt;1\)</span><a class="headerlink" href="#cas-ou-m-1" title="Link to this heading">#</a></h3>
 <p>La figure suivante présente l’allure de la réponse indicielle lorsque <span class="math notranslate nohighlight">\(m&gt;1\)</span>. Dans ce contexte, la réponse est monotone et ne présente pas de
 dépassement.</p>
 <figure class="align-default">
@@ -475,7 +474,7 @@ dépassement.</p>
 </ul>
 </section>
 <section id="id1">
-<h3>Cas où <span class="math notranslate nohighlight">\(m&lt;1\)</span><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3>Cas où <span class="math notranslate nohighlight">\(m&lt;1\)</span><a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>La figure suivante présente l’allure de la réponse indicielle lorsque <span class="math notranslate nohighlight">\(m&lt;1\)</span>. Dans ce contexte, la réponse présente un dépassement plus ou moins important
 et des oscillations de pseudo-pulsation <span class="math notranslate nohighlight">\(\omega_p\)</span>. Pour analyser les performances d’un système de second ordre lorsque <span class="math notranslate nohighlight">\(m&lt;1\)</span>, nous utilisons principalement des abaques.</p>
 <figure class="align-default">
@@ -504,7 +503,7 @@ et des oscillations de pseudo-pulsation <span class="math notranslate nohighligh
 </div>
 </section>
 <section id="id2">
-<h3>Identification<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<h3>Identification<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>Lorsque <span class="math notranslate nohighlight">\(m&lt;1\)</span>, l’identification graphique des paramètres peut s’obtenir de la manière suivante:</p>
 <ul class="simple">
 <li><p>Gain statique: le gain statique s’obtient à partir de la valeur finale via la relation <span class="math notranslate nohighlight">\(K = s(\infty)/E\)</span>.</p></li>
@@ -514,12 +513,12 @@ et des oscillations de pseudo-pulsation <span class="math notranslate nohighligh
 </section>
 </section>
 <section id="reponse-frequentielle">
-<h2>Réponse Fréquentielle<a class="headerlink" href="#reponse-frequentielle" title="Permalink to this heading">#</a></h2>
+<h2>Réponse Fréquentielle<a class="headerlink" href="#reponse-frequentielle" title="Link to this heading">#</a></h2>
 <p>La réponse fréquentielle s’obtient en posant <span class="math notranslate nohighlight">\(p=j\omega\)</span> où <span class="math notranslate nohighlight">\(\omega\)</span> désigne la pulsation (en rad/s). La réponse fréquentielle d’un système passe-bas de premier ordre est donnée par :</p>
 <div class="math notranslate nohighlight">
 \[H(j\omega)=\frac{K}{1-\frac{\omega^2}{\omega_n^2}+j\frac{2m\omega }{\omega_n}}\]</div>
 <section id="module">
-<h3>Module<a class="headerlink" href="#module" title="Permalink to this heading">#</a></h3>
+<h3>Module<a class="headerlink" href="#module" title="Link to this heading">#</a></h3>
 <p>La figure suivante présente l’allure le module de la réponse fréquentielle. Lorsque <span class="math notranslate nohighlight">\(m&lt;0.7\)</span>, le module présente un maximum à la pulsation de
 résonance <span class="math notranslate nohighlight">\(\omega_r\)</span>.</p>
 <figure class="align-default">
@@ -558,7 +557,7 @@ résonance <span class="math notranslate nohighlight">\(\omega_r\)</span>.</p>
 </div>
 </section>
 <section id="argument">
-<h3>Argument<a class="headerlink" href="#argument" title="Permalink to this heading">#</a></h3>
+<h3>Argument<a class="headerlink" href="#argument" title="Link to this heading">#</a></h3>
 <figure class="align-default">
 <img alt="../../_images/second_order-5.png" class="plot-directive" src="../../_images/second_order-5.png" />
 </figure>
@@ -574,7 +573,7 @@ résonance <span class="math notranslate nohighlight">\(\omega_r\)</span>.</p>
 </ul>
 </section>
 <section id="id3">
-<h3>Identification<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>Identification<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>L’identification graphique des paramètres peut s’obtenir de la manière suivante:</p>
 <ul class="simple">
 <li><p>Gain statique: le gain statique correspond à la valeur du module en basse-fréquence. Si le module est affiché en dB, la valeur du module s’obtient via l’expression <span class="math notranslate nohighlight">\(K = 10^{G_0/20}\)</span>. Attention à bien vérifier que la phase évolue de <span class="math notranslate nohighlight">\(0\)</span> à <span class="math notranslate nohighlight">\(-180^o\)</span>. Si ca n’est pas le cas, le gain est négatif.</p></li>
@@ -635,7 +634,7 @@ résonance <span class="math notranslate nohighlight">\(\omega_r\)</span>.</p>
   
   <div class="footer-item">
     <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.2.3.<br>
 </p>
   </div>
   
