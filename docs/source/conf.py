@@ -55,16 +55,24 @@ html_css_files = [
     'css/custom.css',
 ]
 
+html_static_path = ["_static"]
 html_logo = "_static/logo.svg"
+html_context = {
+   "default_mode": "light"
+}
 
 plot_html_show_source_link = False
 plot_html_show_formats = False
 
 html_theme_options = {
+    "logo": {
+      "image_light": "logo.svg",
+      "image_dark": "logo.svg",
+    },
     "icon_links": [
         {
             "name": "GitHub",
-            "url": "https://github.com/vincentchoqueuse/cheatsheet_asservissement",
+            "url": "https://github.com/vincentchoqueuse/cheatsheet_elec",
             "icon": "fab fa-github-square",
             "type": "fontawesome",  
         }
